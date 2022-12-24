@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Header from "../components/header";
+import Intro from "../components/intro";
 
 function App() {
 	return (
 		<div className="font-inter">
 			<Header />
-			<div className="font-cabinetgrotesk">hello world</div>
+			<Intro />
 		</div>
 	);
 }
