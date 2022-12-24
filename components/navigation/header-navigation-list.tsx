@@ -1,15 +1,15 @@
-import React from 'react';
-import { headerNavigationLink } from "../../content/header-link";
+import React from "react";
+import { headerNavigationLink } from "../../content/link-content";
 import { IHeaderNavigationLink } from "../../interface";
-import HeaderNavigationItem from './header-navigation-item';
+import HeaderNavigationItem from "./header-navigation-item";
 
-type Props = {
-};
+type Props = { link?: IHeaderNavigationLink[] };
 
 const HeaderNavigationList = (props: Props) => {
-    return (
+	const { link } = props;
+	return (
 		<div className="flex flex-row items-center gap-x-4">
-			{headerNavigationLink.map(
+			{link && link.map(
 				(props: IHeaderNavigationLink, index: number) => {
 					const {
 						id,
@@ -36,6 +36,6 @@ const HeaderNavigationList = (props: Props) => {
 			)}
 		</div>
 	);
-}
+};
 
-export default HeaderNavigationList
+export default HeaderNavigationList;

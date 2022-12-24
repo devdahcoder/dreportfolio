@@ -19,6 +19,25 @@ export const headerSocialMediaLink: IHeaderSocialMediaLink[] = [
     },
 ];
 
+export const footerSocialMediaLink: IHeaderSocialMediaLink[] = [
+    {
+        id: 1,
+        text: "Behance",
+    },
+    {
+        id: 2,
+        text: "Twitter",
+    },
+    {
+        id: 3,
+        text: "LinkedIn",
+    },
+    {
+        id: 4,
+        text: "Email",
+    },
+];
+
 export const headerNavigationLink: IHeaderNavigationLink[] = [
     {
         id: 1,
