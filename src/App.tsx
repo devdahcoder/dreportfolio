@@ -3,8 +3,9 @@ import Header from "../components/header";
 
 function App() {
 	return (
-		<div className="border">
+		<div className="font-inter">
 			<Header />
+			<div className="font-cabinetgrotesk">hello world</div>
 		</div>
 	);
 }

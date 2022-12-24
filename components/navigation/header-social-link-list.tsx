@@ -1,13 +1,13 @@
 import React from "react";
-import { headerSocialMediaLink } from "../content/header-social-link";
-import { IHeaderSocialMediaLink } from "../interface";
+import { headerSocialMediaLink } from "../../content/header-link";
+import { IHeaderSocialMediaLink } from "../../interface";
 import HeaderSocialLinkItem from "./header-social-link-item";
 
 type Props = {};
 
 const HeaderSocialLinkList = (props: Props) => {
 	return (
-		<div className="flex flex-row items-center">
+		<div className="flex flex-row items-center gap-x-4">
 			{headerSocialMediaLink.map(
 				(props: IHeaderSocialMediaLink, index: number) => {
 					const {

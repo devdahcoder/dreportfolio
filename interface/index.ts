@@ -7,3 +7,5 @@ export interface IHeaderSocialMediaLink {
     icon?: React.ReactNode;
     containerClassName?: string;
 }
+
+export interface IHeaderNavigationLink extends IHeaderSocialMediaLink { };

@@ -1,4 +1,4 @@
-import { IHeaderSocialMediaLink } from "../interface";
+import { IHeaderNavigationLink, IHeaderSocialMediaLink } from "../interface";
 
 export const headerSocialMediaLink: IHeaderSocialMediaLink[] = [
     {
@@ -17,4 +17,15 @@ export const headerSocialMediaLink: IHeaderSocialMediaLink[] = [
         id: 4,
         text: "Em.",
     },
-]
+];
+
+export const headerNavigationLink: IHeaderNavigationLink[] = [
+    {
+        id: 1,
+        text: "Works",
+    },
+    {
+        id: 1,
+        text: "About Me",
+    }
+];

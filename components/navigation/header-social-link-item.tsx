@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import React from "react";
 
 type Props = {
@@ -13,14 +14,27 @@ type Props = {
 const HeaderSocialLinkItem = (props: Props) => {
 	const { id, className, href, icon, style, text, containerClassName } =
 		props;
+
+	const mouseOver = (event: React.MouseEvent) => {
+		gsap.to(event.currentTarget, {
+			scale: 1.2,
+		});
+	};
+	const mouseOut = (event: React.MouseEvent) => {
+		gsap.to(event.currentTarget, { scale: 1 });
+	};
 	return (
-		<div className={`flex flex-row items-center ${containerClassName}`}>
+		<div
+			className={`flex flex-row items-center ${containerClassName}`}
+			onMouseEnter={mouseOver}
+			onMouseLeave={mouseOut}
+		>
 			<a
 				href={`https://${href}`}
 				target="_blank"
 				rel="noopener noreferrer"
 				style={style}
-				className={`w-full flex flex-row items-center ${className}`}
+				className={`w-full flex flex-row items-center px-3 py-2 text-sm font-medium ${className}`}
 			>
 				{text}
 			</a>

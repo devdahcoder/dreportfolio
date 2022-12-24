@@ -6,7 +6,13 @@ module.exports = {
 	],
 
 	theme: {
-		extend: {},
+		fontFamily: {
+			'cabinetgrotesk': ["CabinetGrotesk", "sans-serif"],
+			'inter': ["Inter", "sans-serif"]
+		},
+		extend: {
+			
+		},
 	},
 	plugins: [],
 };
