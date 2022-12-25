@@ -16,7 +16,16 @@ const Intro = (props: Props) => {
 							Product Designer with over two years of experience
 							designing for Saas, Healthcare, E-commerce & Web3.0.
 							Currently, I work in a Product team at{" "}
-							<span>ShawnExchange</span>
+							<span>
+								<a
+									href="https://www.shawn.exchange/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className=" text-orange-500 no-underline"
+								>
+									ShawnExchange
+								</a>
+							</span>
 						</p>
 					</div>
 					<div>

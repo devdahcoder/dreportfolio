@@ -29,7 +29,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
 
-
 * {
 	padding: 0;
 	margin: 0;
@@ -40,7 +39,22 @@
 
 body {
 	min-height: 100vh;
-	font-family: Inter, CabinetGrotesk, -apple-system, Satoshi, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-		overflow-x: hidden;
+	font-family: Inter, CabinetGrotesk, -apple-system, Satoshi,
+		BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+		Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	overflow-x: hidden;
+
+	&::-webkit-scrollbar {
+		width: 0.5rem;
+	}
+
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px hsla(0, 0%, 0%, 0.3);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: hsl(225, 14%, 89%);
+		border-radius: 20px;
+		color: hsl(0, 0%, 96%);
+	}
 }
