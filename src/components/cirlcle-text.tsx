@@ -1,13 +1,12 @@
-import React from 'react';
-import Folder from "../icon/folder";
+import React from "react";
+import Folder from "../../icon/folder";
 
 type Props = {
 	text?: string;
 	className?: string;
-}
+};
 
 const CircleText = (props: Props) => {
-    
 	const { text, className } = props;
 
 	const splitText = text?.split("");
@@ -46,4 +45,4 @@ const CircleText = (props: Props) => {
 	);
 };
 
-export default CircleText
+export default CircleText;

@@ -1,11 +1,11 @@
-import React from 'react';
-import Wave from "../../icon/wave";
+import React from "react";
+import Wave from "../../../icon/wave";
 import ImageContainer from "../image-container";
 
-type Props = {}
+type Props = {};
 
 const About = (props: Props) => {
-    return (
+	return (
 		<div>
 			<div className="flex flex-row justify-between w-4/5 mx-auto my-0">
 				<div
@@ -64,6 +64,6 @@ const About = (props: Props) => {
 			</div>
 		</div>
 	);
-}
+};
 
-export default About
+export default About;

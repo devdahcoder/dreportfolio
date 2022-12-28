@@ -1,7 +1,7 @@
 import React from "react";
-import HeaderSocialLinkList from "./navigation/header-social-link-list";
+import { headerNavigationLink } from "../../content/link-content";
 import HeaderNavigationList from "./navigation/header-navigation-list";
-import { headerNavigationLink } from "../content/link-content";
+import HeaderSocialLinkList from "./navigation/header-social-link-list";
 
 type Props = {};
 
@@ -13,7 +13,7 @@ const Header = (props: Props) => {
 					<HeaderSocialLinkList />
 				</div>
 				<div className="flex flex-row items-center">
-					<HeaderNavigationList link={headerNavigationLink}  />
+					<HeaderNavigationList link={headerNavigationLink} />
 				</div>
 			</div>
 		</div>

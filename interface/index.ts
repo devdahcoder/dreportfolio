@@ -9,3 +9,11 @@ export interface IHeaderSocialMediaLink {
 }
 
 export interface IHeaderNavigationLink extends IHeaderSocialMediaLink { };
+
+export interface IExperience {
+    id?: number | string;
+    text: string;
+    href?: string;
+    detail?: string;
+
+}

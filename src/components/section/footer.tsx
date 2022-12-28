@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
+import { footerSocialMediaLink } from "../../../content/link-content";
 import HeaderNavigationList from "../navigation/header-navigation-list";
-import { footerSocialMediaLink } from '../../content/link-content';
 
-type Props = {}
+type Props = {};
 
 const Footer = (props: Props) => {
-    return (
+	return (
 		<div className="border-t">
 			<div className="flex flex-row items-center justify-between py-5 w-4/5 mx-auto my-0">
 				<div className="flex flex-row items-center ">
@@ -39,6 +39,6 @@ const Footer = (props: Props) => {
 			</div>
 		</div>
 	);
-}
+};
 
-export default Footer
+export default Footer;

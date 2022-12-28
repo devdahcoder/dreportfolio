@@ -1,6 +1,6 @@
 import React from "react";
-import { headerSocialMediaLink } from "../../content/link-content";
-import { IHeaderSocialMediaLink } from "../../interface";
+import { headerSocialMediaLink } from "../../../content/link-content";
+import { IHeaderSocialMediaLink } from "../../../interface";
 import HeaderSocialLinkItem from "./header-social-link-item";
 
 type Props = {};
