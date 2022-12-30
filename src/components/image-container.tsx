@@ -5,7 +5,8 @@ type Props = {
     imageLink?: string;
 };
 
-const ImageContainer = (props: any) => {
+const ImageContainer = (props: Props) => {
+	const { className, imageLink } = props;
 	const classStyle = props.className ? props.className : "";
 
 	return (
@@ -14,7 +15,7 @@ const ImageContainer = (props: any) => {
 				className={`relative block overflow-hidden pb-[100%] ${classStyle}`}
 			>
 				<img
-					src={props?.imageLink}
+					src={`${imageLink}`}
 					alt="image"
 					className="w-full h-full absolute top-0 left-0 select-none object-cover"
 				/>
