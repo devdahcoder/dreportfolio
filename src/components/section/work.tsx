@@ -7,7 +7,7 @@ type Props = {};
 const Work = (props: Props) => {
 	return (
 		<SectionContainer
-			containerClassName=""
+			containerClassName="py-28"
 			className="flex flex-col items-center"
 		>
 			<WorkList />

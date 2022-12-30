@@ -49,12 +49,13 @@ export const footerSocialMediaLink: IHeaderSocialMediaLink[] = [
 export const headerNavigationLink: IHeaderNavigationLink[] = [
     {
         id: 1,
+        text: "About Me",
+        href: "#about-me"
+    },
+    {
+        id: 2,
         text: "Works",
         href: "#works"
     },
-    {
-        id: 1,
-        text: "About Me",
-        href: "#about-me"
-    }
+    
 ];

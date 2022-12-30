@@ -6,13 +6,13 @@ type Props = {};
 
 const About = (props: Props) => {
 	return (
-		<div>
-			<div className="flex flex-row justify-between w-4/5 mx-auto my-0">
+		<div className="py-20">
+			<div className="flex flex-row justify-center gap-x-28 w-4/5 mx-auto my-0">
 				<div
 					className="flex flex-col gap-y-12
                 "
 				>
-					<div className="font-bold font-cabinetgrotesk text-3xl">
+					<div className="font-bold font-cabinetgrotesk text-3xl bg-gradient-to-tl from-zinc-300 to-gray-500 bg-clip-text text-transparent">
 						<p>About</p>
 					</div>
 
@@ -21,15 +21,16 @@ const About = (props: Props) => {
 						className={"w-[25rem] h-[340px] rounded-lg"}
 					/>
 				</div>
+
 				<div
 					className="flex flex-col gap-y-6 w-[24rem] 
                 "
 				>
-					<div className="font-bold font-cabinetgrotesk text-5xl">
+					<div className="font-bold font-cabinetgrotesk text-5xl text-white">
 						<p>Damilare Adigun</p>
 					</div>
-					<div className="flex flex-col text-base font-medium gap-y-5">
-						<div className="flex flex-row items-center ">
+					<div className="flex flex-col text-base font-medium gap-y-5 bg-gradient-to-tl from-zinc-300 to-gray-500 bg-clip-text text-transparent">
+						<div className="flex flex-row items-center gap-x-2">
 							<p>Hello</p>
 							<span>
 								<Wave />

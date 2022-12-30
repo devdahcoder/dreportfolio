@@ -15,13 +15,13 @@ const WorkItem = (props: Props) => {
 			<div>
 				<ImageContainer
 					imageLink={`${image}`}
-					className={"w-[32rem] h-[340px] rounded-xl"}
+					className={"w-[32rem] h-[340px] rounded-xl opacity-40"}
 				/>
 			</div>
-			<div className="absolute -left-56 top-5 text-5xl font-semibold">
+			<div className="absolute -left-56 top-5 text-5xl font-semibold text-white">
 				<p>{name}</p>
 			</div>
-			<div className="absolute top-5 -right-60 w-full max-w-xs text-lg font-normal">
+			<div className="absolute top-5 -right-60 w-full max-w-xs text-lg font-normal text-white">
 				<p>{detail}</p>
 			</div>
 		</div>

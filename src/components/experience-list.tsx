@@ -21,7 +21,7 @@ const ExperienceList = (props: Props) => {
 					/>
 				);
 			})}
-			<div className="border">
+			<div className="">
 				<a
 					href="http://"
 					target="_blank"

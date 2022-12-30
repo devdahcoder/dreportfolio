@@ -6,12 +6,12 @@ type Props = {};
 
 const Footer = (props: Props) => {
 	return (
-		<div className="border-t">
+		<div className="border-t bg-[#151515]">
 			<div className="flex flex-row items-center justify-between py-5 w-4/5 mx-auto my-0">
 				<div className="flex flex-row items-center ">
 					<HeaderNavigationList link={footerSocialMediaLink} />
 				</div>
-				<div>
+				<div className="text-white">
 					<p>
 						Collaborative work of{" "}
 						<span>
