@@ -1,4 +1,5 @@
 import { IHeaderNavigationLink, IHeaderSocialMediaLink } from "../interface";
+import { footerLinkClassName } from "../src/styles/global";
 
 export const headerSocialMediaLink: IHeaderSocialMediaLink[] = [
     {
@@ -28,21 +29,25 @@ export const footerSocialMediaLink: IHeaderSocialMediaLink[] = [
         id: 1,
         text: "Behance",
         href: "www.behance.net/damilare0",
+        className: `${footerLinkClassName}`
     },
     {
         id: 2,
         text: "Twitter",
         href: "www.twitter.com/__dreyyy_",
+        className: `${footerLinkClassName}`
     },
     {
         id: 3,
         text: "LinkedIn",
         href: "www.linkedin.com/in/damilare007/",
+        className: `${footerLinkClassName}`
     },
     {
         id: 4,
         text: "Email",
         href: "damilare.xyz@gmail.com",
+        className: `${footerLinkClassName}`
     },
 ];
 
