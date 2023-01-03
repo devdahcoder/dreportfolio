@@ -11,19 +11,19 @@ type Props = {
 const WorkItem = (props: Props) => {
 	const { name, detail, href, id, image } = props;
 	return (
-		<div className="flex flex-col-reverse relative font-cabinetgrotesk">
+		<div className="flex flex-col-reverse items-start gap-y-10 relative font-cabinetgrotesk">
 			<div>
 				<ImageContainer
 					imageLink={`${image}`}
 					className={
-						"w-[20rem] md:w-[32rem] h-[20rem] md:h-[340px] rounded-xl opacity-40 blur-sm"
+						"w-[28rem] md:w-[32rem] h-[28rem] md:h-[340px] rounded-xl "
 					}
 				/>
 			</div>
-			<div className="relative md:absolute md:-left-56 md:top-5 text-5xl font-semibold text-white">
+			<div className="relative md:absolute md:-left-36 lg:-left-56 md:top-5 text-5xl font-semibold text-white w-full max-w-[70%] sm:max-w-full">
 				<p>{name}</p>
 			</div>
-			<div className="hidden relative md:absolute top-5 -right-60 w-full max-w-xs text-lg font-normal text-white">
+			<div className="hidden md:block relative md:absolute top-5 -right-60 w-full max-w-xs text-lg font-normal text-white">
 				<p>{detail}</p>
 			</div>
 		</div>

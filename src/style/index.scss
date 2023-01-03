@@ -61,12 +61,6 @@ body {
 
 	.experience--li {
 		line-height: 1.15;
-		// font-size: 14px;
-		// font-weight: 400;
-		// -webkit-text-size-adjust: 100%;
-		// font-feature-settings: "liga", "kern";
-		// color: #f2f2f2;
-		// list-style: none;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
 		font-kerning: auto;
@@ -74,19 +68,7 @@ body {
 		transform-style: preserve-3d;
 
 		.experience--li--div--child {
-			// line-height: 1.15;
-			// font-size: 14px;
-			// font-weight: 400;
-			// -webkit-text-size-adjust: 100%;
-			// font-feature-settings: "liga", "kern";
-			// color: #f2f2f2;
-			// list-style: none;
 			cursor: pointer;
-			// box-sizing: inherit;
-			// text-rendering: optimizeLegibility;
-			// -webkit-font-smoothing: antialiased;
-			// font-kerning: auto;
-			// transform: rotateY(-45deg) translateZ(0) scale(1);
 			transform-origin: right center;
 			transform-style: preserve-3d;
 			will-change: transform;

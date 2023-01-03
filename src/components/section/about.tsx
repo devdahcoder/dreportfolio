@@ -1,24 +1,33 @@
-import React from "react";
+import React, { useRef } from "react";
 import Wave from "../../../icon/wave";
 import ImageContainer from "../image-container";
+import Video from "../video";
 
 type Props = {};
 
 const About = (props: Props) => {
+	const videoRef = useRef<HTMLVideoElement>(
+		null
+	) as React.MutableRefObject<HTMLVideoElement>;
+
 	return (
 		<div className="py-20">
-			<div className="flex flex-col sm:flex-row justify-center gap-x-0 md:gap-x-28 gap-y-8 md:gap-y-0 w-full sm:w-4/5 mx-auto my-0">
-				<div
-					className="flex flex-col gap-y-12"
-				>
+			<div className="flex flex-col md:flex-row px-3 justify-center gap-x-0 md:gap-x-16 lg:gap-x-28 gap-y-8 
+				md:gap-y-0 w-full sm:w-4/5 mx-auto my-0">
+				<div className="flex flex-col gap-y-12">
 					<div className="font-bold font-cabinetgrotesk text-3xl bg-gradient-to-tl from-zinc-300 to-gray-500 bg-clip-text text-transparent">
 						<p>About</p>
 					</div>
 
-					<ImageContainer
-						imageLink="./image/Pexels.png"
+					<Video
+						videoRef={videoRef}
+						src={`./video/dre.mp4`}
+						type={`video/mp4`}
+						muted={true}
+						loop={true}
+						autoPlay={true}
 						className={
-							"w-full sm:w-[25rem] h-full sm:h-[340px] rounded-lg"
+							"w-[25rem] h-[340px] rounded-lg"
 						}
 					/>
 				</div>
