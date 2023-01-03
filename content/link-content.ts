@@ -1,5 +1,5 @@
 import { IHeaderNavigationLink, IHeaderSocialMediaLink } from "../interface";
-import { footerLinkClassName } from "../src/styles/global";
+import { footerLinkClassName } from "../src/style/global";
 
 export const headerSocialMediaLink: IHeaderSocialMediaLink[] = [
     {

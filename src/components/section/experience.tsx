@@ -6,7 +6,7 @@ type Props = {}
 const Experience = (props: Props) => {
     return (
 		<div className="py-16">
-			<div className="flex flex-col gap-y-10 w-4/5 mt-0 mx-auto  font-cabinetgrotesk">
+			<div className="flex flex-col gap-y-10 w-4/5 sm:my-0 sm:mx-auto px-3 font-cabinetgrotesk">
 				<div className="text-3xl text-slate-400 font-semibold">
 					<p>Experience</p>
 				</div>
