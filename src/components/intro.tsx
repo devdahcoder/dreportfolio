@@ -5,7 +5,6 @@ import SectionContainer from "./section-container";
 type Props = {};
 
 const Intro = (props: Props) => {
-
 	const [timeFormat, setTimeFormat] = React.useState<string>("");
 	const [timeHour, setTimeHour] = React.useState<number>(0);
 	const [timeMinute, setTimeMinute] = React.useState<string>("");
@@ -43,13 +42,14 @@ const Intro = (props: Props) => {
 	return (
 		<SectionContainer
 			containerClassName="py-24"
-			className="flex flex-col"
+			className="flex flex-col gap-y-20 !w-full"
 		>
-			<div className="text-[9rem] font-extrabold font-cabinetgrotesk text-white">
+			<div className="text-7xl sm:text-[9rem] font-extrabold font-cabinetgrotesk text-white">
 				<p>Damilare Adigun</p>
 			</div>
-			<div className="flex flex-row justify-between ">
-				<div className="text-lg font-medium w-2/4 bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent">
+
+			<div className="flex flex-col sm:flex-row justify-between gap-y-12">
+				<div className="text-lg font-medium sm:w-2/4 bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent">
 					<p>
 						Product Designer with over two years of experience
 						designing for Saas, Healthcare, E-commerce & Web3.0.
@@ -66,12 +66,13 @@ const Intro = (props: Props) => {
 						</span>
 					</p>
 				</div>
+
 				<div>
 					<CircleText text={"- Download - Resume"} />
 				</div>
 
-				<div className="fixed bottom-10 right-10">
-					<div className="flex flex-row items-center text-sm animate-pulse bg-gradient-to-tl from-zinc-300 to-gray-500 bg-clip-text text-transparent">
+				<div className="fixed bottom-5 right-5 pointer-events-none z-50">
+					<div className="flex flex-row items-center text-sm animate-pulse text-white">
 						{timeHour}:{timeMinute} {timeFormat} GMT, Lagos
 					</div>
 				</div>

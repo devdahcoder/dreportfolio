@@ -8,7 +8,7 @@ type Props = { link?: IHeaderNavigationLink[] };
 const HeaderNavigationList = (props: Props) => {
 	const { link } = props;
 	return (
-		<div className="flex flex-row items-center gap-x-4">
+		<div className="flex flex-col sm:flex-row items-start md:items-center gap-x-4">
 			{link &&
 				link.map((props: IHeaderNavigationLink, index: number) => {
 					const {

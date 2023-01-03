@@ -4,9 +4,7 @@ type Props = {}
 
 const Contact = (props: Props) => {
     return (
-		<div
-			className="py-20 bg-[#151515]"
-		>
+		<div className="py-20 bg-[#151515]">
 			<div className="flex flex-col items-start justify-start gap-y-5 w-4/5 my-0 mx-auto">
 				<div>
 					<div className="flex flex-row items-center gap-x-3 py-1 px-5 rounded-full border bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent">
@@ -26,7 +24,7 @@ const Contact = (props: Props) => {
 						href="http://"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex flex-row items-center justify-center w-full py-1 text-2xl bg-gradient-to-l from-amber-600 to-orange-600 bg-clip-text text-transparent"
+						className="flex flex-row items-center justify-center w-full py-1 text-2xl text-orange-600"
 					>
 						Book a call
 					</a>

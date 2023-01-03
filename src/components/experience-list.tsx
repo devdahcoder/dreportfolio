@@ -29,7 +29,7 @@ const ExperienceList = (props: Props) => {
 					className="w-full flex flex-row items-center justify-center text-orange-600 gap-x-3 text-xl font-medium no-underline"
 				>
 					Download resume
-					<Folder className="fill-black w-5 h-5" />
+					<Folder className="fill-white w-5 h-5" />
 				</a>
 			</div>
 		</div>

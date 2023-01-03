@@ -11,10 +11,6 @@ const CircleText = (props: Props) => {
 
 	const splitText = text?.split("");
 
-	// const breakpoint = 320;
-
-	// const width = WindowSize();
-
 	return (
 		<div className="w-fit h-fit relative">
 			<a
@@ -23,7 +19,7 @@ const CircleText = (props: Props) => {
 				rel="noopener noreferrer"
 				className="z-10 flex flex-row items-center justify-center absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4"
 			>
-				<Folder className="fill-black " />
+				<Folder className="fill-white " />
 			</a>
 			<div
 				className={`

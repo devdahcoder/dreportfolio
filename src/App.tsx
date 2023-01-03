@@ -10,7 +10,7 @@ import Work from "./components/section/work";
 function App() {
 	return (
 		<div className="font-inter">
-			<Header />
+			{/* <Header /> */}
 			<Intro />
 			<About />
 			<Work />
