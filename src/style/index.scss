@@ -75,4 +75,45 @@ body {
 			transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 		}
 	}
+
+	.circle--cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 9rem;
+		height: 9rem;
+		background-color: inherit;
+		border-radius: 100vh;
+		transform: translate(-50%, -50%);
+		-webkit-transition-duration: 100ms;
+		transition-duration: 300ms;
+		-webkit-transition-timing-function: ease-out;
+		transition-timing-function: ease-out;
+		will-change: width, height, transform, border;
+		z-index: 999;
+		pointer-events: none;
+		border: 1.5px solid white;
+	}
+	.dot {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 5px;
+		height: 5px;
+		background-color: white;
+		border-radius: 100%;
+		transform: translate(-50%, -50%);
+		z-index: 999;
+		pointer-events: none;
+	}
+
+	.circle--cursor.hover--link {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	.dot.hover--link {
+		background-color: rgb(34, 34, 194);
+		
+	}
 }

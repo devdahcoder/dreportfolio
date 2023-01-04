@@ -6,12 +6,28 @@ import Contact from "./components/section/contact";
 import Footer from "./components/section/footer";
 import Experience from "./components/section/experience";
 import Work from "./components/section/work";
+import { useCursor } from "../hook/index";
 
 function App() {
+
+	const { cursorType, mousePosition, setCursorType } = useCursor();
+
+	const { x, y } = mousePosition;
+
+	console.log("cursorType ==>", cursorType);
+
 	return (
 		<div className="font-inter">
-			<Header />
-			<Intro />
+			<div
+				className={`circle--cursor ${cursorType}`}
+				style={{ left: `${x}px`, top: `${y}px` }}
+			></div>
+			<div
+				className={`dot animate-ping ${cursorType}`}
+				style={{ left: `${x}px`, top: `${y}px` }}
+			></div>
+			<Header cursorType={cursorType} setCursorType={setCursorType} />
+			<Intro cursorType={cursorType} setCursorType={setCursorType} />
 			<About />
 			<Work />
 			<Experience />

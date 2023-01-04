@@ -3,9 +3,13 @@ import { headerSocialMediaLink } from "../../../content/link-content";
 import { IHeaderSocialMediaLink } from "../../../interface";
 import HeaderSocialLinkItem from "./header-social-link-item";
 
-type Props = {};
+type Props = {
+	cursorType: string;
+	setCursorType: React.Dispatch<React.SetStateAction<string>>;
+};
 
 const HeaderSocialLinkList = (props: Props) => {
+	const { cursorType, setCursorType } = props;
 	return (
 		<div className="flex flex-row items-center gap-x-4">
 			{headerSocialMediaLink.map(
@@ -29,6 +33,8 @@ const HeaderSocialLinkList = (props: Props) => {
 							text={text}
 							style={style}
 							containerClassName={containerClassName}
+							cursorType={cursorType}
+							setCursorType={setCursorType}
 						/>
 					);
 				}

@@ -11,7 +11,7 @@ const About = (props: Props) => {
 	) as React.MutableRefObject<HTMLVideoElement>;
 
 	return (
-		<div className="py-20 ">
+		<section id="about" className="py-20 ">
 			<div
 				className=" flex flex-col lg:flex-row px-3 items-center lg:items-start justify-center gap-x-0 md:gap-x-16 lg:gap-x-28 gap-y-20 
 				lg:gap-y-0 w-11/12 sm:w-4/5 mx-auto my-0"
@@ -75,7 +75,7 @@ const About = (props: Props) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

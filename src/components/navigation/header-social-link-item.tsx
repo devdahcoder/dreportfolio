@@ -1,4 +1,5 @@
 import React from "react";
+import { useCursor } from "../../../hook";
 
 type Props = {
 	id: string | number;
@@ -8,17 +9,19 @@ type Props = {
 	style?: React.CSSProperties;
 	icon?: React.ReactNode;
 	containerClassName?: string;
+	cursorType: string;
+	setCursorType: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const HeaderSocialLinkItem = (props: Props) => {
-	const { id, className, href, icon, style, text, containerClassName } =
+	const { id, className, href, icon, style, text, containerClassName, cursorType, setCursorType } =
 		props;
 
 	return (
-		<div
-			className={`flex flex-row items-center ${containerClassName}`}
-		>
+		<div className={`flex flex-row items-center ${containerClassName}`}>
 			<a
+				onMouseEnter={() => setCursorType("hover--link")}
+				onMouseLeave={() => setCursorType("")}
 				href={`https://${href}`}
 				target="_blank"
 				rel="noopener noreferrer"

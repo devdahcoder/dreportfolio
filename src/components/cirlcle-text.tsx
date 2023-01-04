@@ -4,16 +4,20 @@ import Folder from "../../icon/folder";
 type Props = {
 	text?: string;
 	className?: string;
+	cursorType: string;
+	setCursorType: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const CircleText = (props: Props) => {
-	const { text, className } = props;
+	const { text, className, cursorType, setCursorType } = props;
 
 	const splitText = text?.split("");
 
 	return (
 		<div className="w-fit h-fit relative">
 			<a
+				onMouseEnter={() => setCursorType("hover--link")}
+				onMouseLeave={() => setCursorType("")}
 				href="http://"
 				target="_blank"
 				rel="noopener noreferrer"

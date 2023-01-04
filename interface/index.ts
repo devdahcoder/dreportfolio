@@ -1,3 +1,4 @@
+import { NAVIGATION_TYPE } from './../enum/index';
 export interface IWork {
     id?: number | string;
     name: string;
@@ -21,6 +22,7 @@ export interface IHeaderSocialMediaLink {
     style?: React.CSSProperties;
     icon?: React.ReactNode;
     containerClassName?: string;
+    type: NAVIGATION_TYPE;
 }
 
 export interface IHeaderNavigationLink extends IHeaderSocialMediaLink { };

@@ -8,22 +8,15 @@ type Props = {
 	style?: React.CSSProperties;
 	icon?: React.ReactNode;
 	containerClassName?: string;
+	renderLink?: React.ReactNode;
 };
 
 const HeaderNavigationItem = (props: Props) => {
-    const { id, className, href, icon, style, text, containerClassName } =
+    const { id, className, href, icon, style, text, containerClassName, renderLink } =
 		props;
     return (
 		<div className={`flex flex-row items-center ${containerClassName}`}>
-			<a
-				href={`https://${href}`}
-				target="_blank"
-				rel="noopener noreferrer"
-				style={style}
-				className={`w-full flex flex-row items-center px-3 py-2 text-sm font-medium bg-gradient-to-tl from-slate-200 to-gray-100 bg-clip-text text-transparent ${className}`}
-			>
-				{text}
-			</a>
+			{ renderLink }
 		</div>
 	);
 }

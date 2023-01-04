@@ -2,12 +2,17 @@ import React from "react";
 import CircleText from "./cirlcle-text";
 import SectionContainer from "./section-container";
 
-type Props = {};
+type Props = {
+	cursorType: string;
+	setCursorType: React.Dispatch<React.SetStateAction<string>>;
+};
 
 const Intro = (props: Props) => {
+
 	const [timeFormat, setTimeFormat] = React.useState<string>("");
 	const [timeHour, setTimeHour] = React.useState<number>(0);
 	const [timeMinute, setTimeMinute] = React.useState<string>("");
+	const { cursorType, setCursorType } = props;
 
 	React.useEffect(() => {
 		const interval = setInterval(() => {
@@ -71,7 +76,11 @@ const Intro = (props: Props) => {
 					</div>
 
 					<div>
-						<CircleText text={"- Download - Resume"} />
+						<CircleText
+							text={"- Download - Resume"}
+							cursorType={cursorType}
+							setCursorType={setCursorType}
+						/>
 					</div>
 
 					<div className="fixed bottom-5 right-5 pointer-events-none z-50">
