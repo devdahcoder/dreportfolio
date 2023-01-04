@@ -40,9 +40,9 @@ const Intro = (props: Props) => {
 	}, []);
 
 	return (
-		<div className={`py-24 border`}>
+		<div className={`py-24`}>
 			<div
-				className={`border flex flex-col md:gap-y-16 w-11/12 md:w-4/5 mt-0 mx-auto`}
+				className={`flex flex-col md:gap-y-16 w-11/12 md:w-4/5 mt-0 mx-auto`}
 			>
 				<div
 					className="text-justify text-[16vw] sm:text-[13vw] md:text-[10.7vw] leading-[1] md:leading-[0.7] font-extrabold 

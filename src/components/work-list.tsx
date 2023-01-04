@@ -7,7 +7,7 @@ type Props = {}
 
 const WorkList = (props: Props) => {
     return (
-		<div className="flex flex-col items-center gap-y-36 relative">
+		<div className="flex flex-col md:items-center gap-y-36 relative">
             {workContent.map((props: IWork, index: number) => {
 
                 const { name, detail, href, id, image } = props;

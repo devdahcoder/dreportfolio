@@ -8,7 +8,7 @@ type Props = {}
 
 const ExperienceList = (props: Props) => {
     return (
-		<div className="flex flex-col items-start gap-y-5">
+		<div className="flex flex-col items-start gap-y-10">
 			{experienceContent.map((props: IExperience, index: number) => {
 				const { text, detail, href, id } = props;
 

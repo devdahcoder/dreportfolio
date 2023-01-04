@@ -13,7 +13,7 @@ const ExperienceItem = (props: Props) => {
 
     return (
 		<li className="list-none experience--li">
-			<div className="flex flex-col gap-y-5 experience--li--div--child w-full max-w-[80%] lg:max-w-[75%]">
+			<div className="flex flex-col gap-y-5 experience--li--div--child w-full max-w-[90%] lg:max-w-[75%]">
 				<a
 					href="http://"
 					target="_blank"
