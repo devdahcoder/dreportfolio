@@ -11,9 +11,11 @@ const About = (props: Props) => {
 	) as React.MutableRefObject<HTMLVideoElement>;
 
 	return (
-		<div className="py-20">
-			<div className="flex flex-col md:flex-row px-3 justify-center gap-x-0 md:gap-x-16 lg:gap-x-28 gap-y-8 
-				md:gap-y-0 w-full sm:w-4/5 mx-auto my-0">
+		<div className="py-20 ">
+			<div
+				className=" flex flex-col lg:flex-row px-3 items-center lg:items-start justify-center gap-x-0 md:gap-x-16 lg:gap-x-28 gap-y-20 
+				lg:gap-y-0 w-11/12 sm:w-4/5 mx-auto my-0"
+			>
 				<div className="flex flex-col gap-y-12">
 					<div className="font-bold font-cabinetgrotesk text-3xl bg-gradient-to-tl from-zinc-300 to-gray-500 bg-clip-text text-transparent">
 						<p>About</p>
@@ -27,13 +29,13 @@ const About = (props: Props) => {
 						loop={true}
 						autoPlay={true}
 						className={
-							"w-[25rem] h-[340px] rounded-lg"
+							"w-[23rem] sm:w-[28rem] h-[23rem] sm:h-[28rem] rounded-lg"
 						}
 					/>
 				</div>
 
 				<div
-					className="flex flex-col gap-y-6 w-full md:w-[24rem] 
+					className="flex flex-col gap-y-6 w-11/12 sm:w-[28rem] lg:w-[24rem] 
                 "
 				>
 					<div className="text-3xl sm:text-5xl font-bold font-cabinetgrotesk text-white">
