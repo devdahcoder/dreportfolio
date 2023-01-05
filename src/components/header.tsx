@@ -14,9 +14,9 @@ const Header = (props: Props) => {
 	return (
 		<SectionContainer
 			containerClassName="border-b"
-			className=" flex flex-row items-center justify-between py-6"
+			className=" flex flex-row items-center justify-center sm:justify-between py-6"
 		>
-			<div className="flex flex-row items-center">
+			<div className="hidden sm:flex flex-row items-center">
 				<HeaderSocialLinkList
 					cursorType={cursorType}
 					setCursorType={setCursorType}

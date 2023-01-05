@@ -16,7 +16,7 @@ const About = (props: Props) => {
 				className="flex flex-col lg:flex-row px-3 items-center lg:items-start justify-center gap-x-0 md:gap-x-16 lg:gap-x-28 gap-y-20 
 				lg:gap-y-0 w-11/12 sm:w-4/5 mx-auto my-0"
 			>
-				<div className="flex flex-col w-full max-w-[380px] gap-y-12">
+				<div className="flex flex-col w-full max-w-[32rem] gap-y-12">
 					<div className="font-bold font-cabinetgrotesk text-3xl bg-gradient-to-tl from-zinc-300 to-gray-500 bg-clip-text text-transparent">
 						<p>About</p>
 					</div>
@@ -39,7 +39,7 @@ const About = (props: Props) => {
 					<div className="text-3xl sm:text-5xl font-bold font-cabinetgrotesk text-white">
 						<p>Damilare Adigun</p>
 					</div>
-					<div className="flex flex-col text-base font-medium gap-y-5 bg-gradient-to-tl from-zinc-300 to-gray-500 bg-clip-text text-transparent">
+					<div className="flex flex-col text-base font-medium gap-y-8 lg:gap-y-14 bg-gradient-to-tl from-zinc-300 to-gray-500 bg-clip-text text-transparent">
 						<div className="flex flex-row items-center gap-x-2">
 							<p>Hello</p>
 							<span>

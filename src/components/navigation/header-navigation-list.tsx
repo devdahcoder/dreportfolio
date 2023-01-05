@@ -13,7 +13,7 @@ type Props = {
 const HeaderNavigationList = (props: Props) => {
 	const { link, cursorType, setCursorType } = props;
 	return (
-		<div className="flex flex-col sm:flex-row items-start md:items-center gap-x-4">
+		<div className="flex flex-row items-center sm:items-start md:items-center gap-x-4">
 			{link &&
 				link.map((props: IHeaderNavigationLink, index: number) => {
 					const {
