@@ -19,11 +19,11 @@ function App() {
 	return (
 		<div className="font-inter">
 			<div
-				className={`circle--cursor ${cursorType}`}
+				className={`circle--cursor ${cursorType} hidden sm:block`}
 				style={{ left: `${x}px`, top: `${y}px` }}
 			></div>
 			<div
-				className={`dot animate-ping ${cursorType}`}
+				className={`dot animate-ping ${cursorType} hidden sm:block`}
 				style={{ left: `${x}px`, top: `${y}px` }}
 			></div>
 			<Header cursorType={cursorType} setCursorType={setCursorType} />
