@@ -1,6 +1,7 @@
 import React from "react";
 import CircleText from "./cirlcle-text";
 import SectionContainer from "./section-container";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 
 type Props = {
 	cursorType: string;
@@ -49,15 +50,28 @@ const Intro = (props: Props) => {
 			<div
 				className={`flex flex-col md:gap-y-16 w-11/12 md:w-4/5 mt-0 mx-auto`}
 			>
-				<div
+				<motion.div
+					initial={{ y: "300%", opacity: 0.4 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{ duration: 2, ease: "easeInOut", velocity: 1 }}
 					className="text-justify text-[16vw] sm:text-[13vw] md:text-[10.7vw] leading-[1] md:leading-[0.7] font-extrabold 
 					font-cabinetgrotesk text-white after:inline-block after:w-full"
 				>
 					<p>Damilare Adigun</p>
-				</div>
+				</motion.div>
 
 				<div className="flex flex-col md:flex-row justify-between gap-y-12">
-					<div className="text-lg font-medium w-4/5 md:w-2/4 bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent">
+					<motion.div
+						initial={{ y: "200%", opacity: 0.4 }}
+						animate={{ y: 0, opacity: 1 }}
+						transition={{
+							duration: 2,
+							ease: "easeInOut",
+							velocity: 1,
+							delay: 1,
+						}}
+						className="text-lg font-medium w-4/5 md:w-2/4 bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent"
+					>
 						<p>
 							Product Designer with over two years of experience
 							designing for Saas, Healthcare, E-commerce & Web3.0.
@@ -73,7 +87,7 @@ const Intro = (props: Props) => {
 								</a>
 							</span>
 						</p>
-					</div>
+					</motion.div>
 
 					<div>
 						<CircleText

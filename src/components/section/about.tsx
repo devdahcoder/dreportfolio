@@ -3,12 +3,16 @@ import Wave from "../../../icon/wave";
 import ImageContainer from "../image-container";
 import Video from "../video";
 
-type Props = {};
+type Props = {
+	cursorType: string;
+	setCursorType: React.Dispatch<React.SetStateAction<string>>;
+};
 
 const About = (props: Props) => {
 	const videoRef = useRef<HTMLVideoElement>(
 		null
 	) as React.MutableRefObject<HTMLVideoElement>;
+	const { cursorType, setCursorType } = props;
 
 	return (
 		<section id="about" className="py-20 ">
@@ -29,6 +33,8 @@ const About = (props: Props) => {
 						loop={true}
 						autoPlay={true}
 						className={"h-[340px] rounded-lg"}
+						cursorType={cursorType}
+						setCursorType={setCursorType}
 					/>
 				</div>
 

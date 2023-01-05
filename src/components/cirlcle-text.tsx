@@ -1,5 +1,6 @@
 import React from "react";
 import Folder from "../../icon/folder";
+import { motion } from "framer-motion";
 
 type Props = {
 	text?: string;
@@ -14,7 +15,17 @@ const CircleText = (props: Props) => {
 	const splitText = text?.split("");
 
 	return (
-		<div className="w-fit h-fit relative">
+		<motion.div
+			initial={{ x: "200%", opacity: 0.4 }}
+			animate={{ x: 0, opacity: 1 }}
+			transition={{
+				duration: 2,
+				ease: "easeInOut",
+				velocity: 1,
+				delay: 1,
+			}}
+			className="w-fit h-fit relative"
+		>
 			<a
 				onMouseEnter={() => setCursorType("hover--link")}
 				onMouseLeave={() => setCursorType("")}
@@ -48,7 +59,7 @@ const CircleText = (props: Props) => {
 					})}
 				</p>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

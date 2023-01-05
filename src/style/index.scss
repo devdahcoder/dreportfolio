@@ -115,4 +115,55 @@ body {
 	.dot.hover--link {
 		background-color: rgb(34, 34, 194);
 	}
+
+	.bar {
+		position: relative;
+		height: 2px;
+		width: 100vh;
+		border: 1px solid white;
+		margin: 0 auto;
+		background: #fff;
+	}
+
+	.circle {
+		position: absolute;
+		top: -30px;
+		margin-left: -30px;
+		height: 60px;
+		width: 60px;
+		left: 0;
+		background: #fff;
+		border-radius: 30%;
+		animation: move 5s infinite;
+
+		@keyframes move {
+			0% {
+				left: 0;
+			}
+			50% {
+				left: 100%;
+				-webkit-transform: rotate(450deg);
+				width: 150px;
+				height: 150px;
+			}
+			75% {
+				left: 100%;
+				-webkit-transform: rotate(450deg);
+				width: 150px;
+				height: 150px;
+			}
+			100% {
+				right: 100%;
+			}
+		}
+	}
+
+	.loading--text {
+		position: absolute;
+		top: -35px;
+		right: -85px;
+		text-transform: uppercase;
+		color: #347fc3;
+		font-weight: bold;
+	}
 }

@@ -8,6 +8,7 @@ import Experience from "./components/section/experience";
 import Work from "./components/section/work";
 import { useCursor } from "../hook/index";
 import Cursor from "./components/cursor";
+import Loader from "./components/loader";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 
 	return (
 		<div className="font-inter">
+			{/* <Loader /> */}
 			<Cursor
 				cursorType={cursorType}
 				setCursorType={setCursorType}
@@ -22,7 +24,7 @@ function App() {
 			/>
 			<Header cursorType={cursorType} setCursorType={setCursorType} />
 			<Intro cursorType={cursorType} setCursorType={setCursorType} />
-			<About />
+			<About cursorType={cursorType} setCursorType={setCursorType} />
 			<Work />
 			<Experience />
 			<Contact />

@@ -13,13 +13,20 @@ type Props = {
 	height?: string;
 	width?: string;
 	videoRef?: React.MutableRefObject<HTMLVideoElement>;
+	cursorType: string;
+	setCursorType: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const Video = (props: Props) => {
+	const { cursorType, setCursorType } = props;
 	const classStyle = props.className ? props.className : "";
 
 	return (
-		<div className="block w-full">
+		<div
+			onMouseOver={() => setCursorType("video--hover")}
+			onMouseOut={() => setCursorType("")}
+			className="block w-full"
+		>
 			<div
 				className={`relative block overflow-hidden pb-[100%] ${classStyle}`}
 			>
