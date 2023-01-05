@@ -6,8 +6,8 @@ import { NAVIGATION_TYPE } from "../../../enum";
 
 type Props = {
 	link?: IHeaderNavigationLink[];
-	cursorType: string;
-	setCursorType: React.Dispatch<React.SetStateAction<string>>;
+	cursorType?: string;
+	setCursorType?: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const HeaderNavigationList = (props: Props) => {
@@ -41,10 +41,10 @@ const HeaderNavigationList = (props: Props) => {
 									renderLink={
 										<a
 											onMouseEnter={() =>
-												setCursorType("hover--link")
+												setCursorType && setCursorType("hover--link")
 											}
 											onMouseLeave={() =>
-												setCursorType("")
+												setCursorType &&  setCursorType("")
 											}
 											href={`https://${href}`}
 											target="_blank"
@@ -69,10 +69,10 @@ const HeaderNavigationList = (props: Props) => {
 									renderLink={
 										<a
 											onMouseEnter={() =>
-												setCursorType("hover--link")
+												setCursorType &&  setCursorType("hover--link")
 											}
 											onMouseLeave={() =>
-												setCursorType("")
+												setCursorType &&  setCursorType("")
 											}
 											href={`${href}`}
 											style={style}
