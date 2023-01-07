@@ -15,10 +15,11 @@ type Props = {
 	videoRef?: React.MutableRefObject<HTMLVideoElement>;
 	cursorType: string;
 	setCursorType: React.Dispatch<React.SetStateAction<string>>;
+	onClick?: () => void;
 };
 
 const Video = (props: Props) => {
-	const { cursorType, setCursorType } = props;
+	const { cursorType, setCursorType, onClick } = props;
 	const classStyle = props.className ? props.className : "";
 
 	return (
@@ -41,6 +42,7 @@ const Video = (props: Props) => {
 					disablePictureInPicture={props?.disablePictureInPicture}
 					height={props?.height}
 					width={props?.width}
+					onClick={onClick}
 				>
 					<source src={props?.src} type={props?.type} />
 				</video>

@@ -14,8 +14,8 @@ const WorkList = (props: Props) => {
 			opacity: 1,
 			transition: {
 				ease: "easeInOut",
-				when: "beforeChildren",
-				delayChildren: 0.4,
+				delayChildren: 0.7,
+				duration: 3,
 				staggerChildren: 0.3,
 			},
 		},

@@ -11,9 +11,7 @@ const Experience = (props: Props) => {
 					<p>Experience</p>
 				</div>
 
-				<div>
-					<ExperienceList />
-				</div>
+				<ExperienceList />
 			</div>
 		</div>
 	);

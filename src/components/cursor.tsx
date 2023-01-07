@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion } from "framer-motion"
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
 
 type Props = {
 	cursorType: string;
@@ -8,15 +8,15 @@ type Props = {
 		x: number;
 		y: number;
 	};
+	isVideoPlaying?: boolean;
 };
 
 const Cursor = (props: Props) => {
-	
-	const { cursorType, setCursorType, mousePosition } = props;
+	const { cursorType, setCursorType, mousePosition, isVideoPlaying } = props;
 
 	const { x, y } = mousePosition;
 
-    return (
+	return (
 		<>
 			<motion.div
 				className={`circle--cursor ${cursorType} hidden sm:block`}
@@ -27,13 +27,23 @@ const Cursor = (props: Props) => {
 					stiffness: 50,
 					restDelta: 0.001,
 				}}
-			></motion.div>
+			>
+				<p
+					className={`${
+						cursorType === "video--hover"
+							? "font-light text-xs absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
+							: "hidden"
+					}`}
+				>
+					{isVideoPlaying ? "Pause" : "Play"}
+				</p>
+			</motion.div>
 			<div
 				className={`dot animate-ping ${cursorType} hidden sm:block`}
 				style={{ left: `${x}px`, top: `${y}px` }}
 			></div>
 		</>
 	);
-}
+};
 
-export default Cursor
+export default Cursor;

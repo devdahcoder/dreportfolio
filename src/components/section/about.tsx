@@ -6,13 +6,12 @@ import Video from "../video";
 type Props = {
 	cursorType: string;
 	setCursorType: React.Dispatch<React.SetStateAction<string>>;
+	videoRef?: React.MutableRefObject<HTMLVideoElement>;
+	handleVideoPlay: () => void;
 };
 
 const About = (props: Props) => {
-	const videoRef = useRef<HTMLVideoElement>(
-		null
-	) as React.MutableRefObject<HTMLVideoElement>;
-	const { cursorType, setCursorType } = props;
+	const { cursorType, setCursorType, videoRef, handleVideoPlay } = props;
 
 	return (
 		<section id="about" className="py-20 ">
@@ -35,6 +34,7 @@ const About = (props: Props) => {
 						className={"h-[340px] rounded-lg"}
 						cursorType={cursorType}
 						setCursorType={setCursorType}
+						onClick={handleVideoPlay}
 					/>
 				</div>
 

@@ -32,7 +32,7 @@ const CircleText = (props: Props) => {
 				href="http://"
 				target="_blank"
 				rel="noopener noreferrer"
-				className="z-10 flex flex-row items-center justify-center absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4"
+				className="z-10 flex flex-row items-center justify-center select-none absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4"
 			>
 				<Folder className="fill-white " />
 			</a>
