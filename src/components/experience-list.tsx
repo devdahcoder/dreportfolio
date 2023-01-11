@@ -15,12 +15,12 @@ const ExperienceList = (props: Props) => {
 		},
 		visible: {
 			opacity: 1,
-			transition: {
-				ease: "easeInOut",
-				delayChildren: 0.5,
-				duration: 3,
-				staggerChildren: 0.3,
-			},
+			// transition: {
+			// 	// ease: "easeInOut",
+			// 	// delayChildren: 0.5,
+			// 	// duration: 3,
+			// 	// staggerChildren: 0.3,
+			// },
 		},
 	};
 
@@ -37,6 +37,7 @@ const ExperienceList = (props: Props) => {
 
 				return (
 					<ExperienceItem
+						index={index}
 						text={text}
 						detail={detail}
 						href={href}
