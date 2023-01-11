@@ -22,7 +22,7 @@ const HeaderSocialLinkItem = (props: Props) => {
 			<a
 				onMouseEnter={() => setCursorType("hover--link")}
 				onMouseLeave={() => setCursorType("")}
-				href={`https://${href}`}
+				href={`${href}`}
 				target="_blank"
 				rel="noopener noreferrer"
 				style={style}

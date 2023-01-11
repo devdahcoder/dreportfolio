@@ -40,9 +40,6 @@ const ExperienceItem = (props: Props) => {
 		>
 			<div className="flex flex-col gap-y-5 experience--li--div--child w-full max-w-[90%] lg:max-w-[75%]">
 				<a
-					href="http://"
-					target="_blank"
-					rel="noopener noreferrer"
 					className="text-5xl md:text-7xl font-bold text-white"
 				>
 					{text}

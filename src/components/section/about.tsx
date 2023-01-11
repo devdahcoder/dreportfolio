@@ -45,7 +45,7 @@ const About = (props: Props) => {
 					<div className="text-3xl sm:text-5xl font-bold font-cabinetgrotesk text-white">
 						<p>Damilare Adigun</p>
 					</div>
-					<div className="flex flex-col text-base font-medium gap-y-8 lg:gap-y-14 bg-gradient-to-tl from-zinc-300 to-gray-500 bg-clip-text text-transparent">
+					<div className="flex flex-col text-base font-medium gap-y-8 lg:gap-y-14 text-white">
 						<div className="flex flex-row items-center gap-x-2">
 							<p>Hello</p>
 							<span>

@@ -29,7 +29,7 @@ const CircleText = (props: Props) => {
 			<a
 				onMouseEnter={() => setCursorType("hover--link")}
 				onMouseLeave={() => setCursorType("")}
-				href="http://"
+				href="https://drive.google.com/file/d/1wK5b2CLjJjdySvZ312RRBZu47F-btuE3/view?usp=sharing/"
 				target="_blank"
 				rel="noopener noreferrer"
 				className="z-10 flex flex-row items-center justify-center select-none absolute top-1/2 left-1/2 -translate-x-2/4 -translate-y-2/4"

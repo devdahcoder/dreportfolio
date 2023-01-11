@@ -13,7 +13,7 @@ const GlobeLoader = (props: Props) => {
 		<motion.div
 			className={`${
 				loadingPercentage === 100 ? "z-0 pointer-events-none" : "bg-black z-50"
-			}  fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center transition-all duration-500 ease-in-out`}
+			} blur-3xl fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center transition-all duration-500 ease-in-out`}
 		>
 			<div
 				className={`relative globe--container w-44 h-44 md:w-60 md:h-60 lg:w-80 lg:h-80 ${className}`}

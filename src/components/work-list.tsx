@@ -12,14 +12,14 @@ const WorkList = (props: Props) => {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
-			transition: {
-				ease: "easeInOut",
-				delayChildren: 0.7,
-				duration: 3,
-				staggerChildren: 0.3,
-			},
+			// transition: {
+			// 	ease: "easeInOut",
+			// 	delayChildren: 0.5,
+			// 	duration: 3,
+			// 	staggerChildren: 0.3,
+			// },
 		},
-    };
+	};
     
     return (
 		<motion.div
@@ -34,6 +34,7 @@ const WorkList = (props: Props) => {
 
 				return (
 					<WorkItem
+						index={index}
 						key={index}
 						name={name}
 						detail={detail}

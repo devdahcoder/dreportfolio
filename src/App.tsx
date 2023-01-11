@@ -83,7 +83,7 @@ function App() {
 				loadingPercentage={loadingPercentage}
 			/>
 
-			{loadingPercentage === 100 && (
+			// {loadingPercentage === 100 && (
 				<>
 					<Cursor
 						cursorType={cursorType}

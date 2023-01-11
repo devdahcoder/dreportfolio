@@ -47,9 +47,9 @@ const ExperienceList = (props: Props) => {
 
 			<div className="">
 				<a
-					href="http://"
-					target="_blank"
-					rel="noopener noreferrer"
+					download={`Damilare Resume`}
+					type="pdf"
+					href="./file/dre_resume.pdf"
 					className="w-full flex flex-row items-center justify-center text-orange-600 gap-x-3 text-xl font-medium no-underline"
 				>
 					Download resume
