@@ -23,7 +23,13 @@ const Loader = (props: Props) => {
 			className="z-50 fixed bg-[hsl(0, 0%, 7%)] top-0 left-0 overflow-y-hidden overflow-x-hidden w-full h-full flex flex-col items-center justify-center"
 		>
 			<div className="bg-[hsl(0, 0%, 7%)] w-full overflow-hidden">
-				<div className="loader--bar">
+				<div
+					className="
+					loader--bar border mt-0 
+					w-full
+					max-w-[70%]
+				"
+				>
 					<div className="loader--circle"></div>
 					<p className="loader--text">Damilare</p>
 				</div>
