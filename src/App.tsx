@@ -15,8 +15,9 @@ function App() {
 	const { cursorType, mousePosition, setCursorType } = useCursor();
 	const [isVideoPlaying, setIsVideoPlaying] = useState<boolean>(true);
 	const [loading, setLoading] = useState<boolean>(true);
-		const [loadingPercentage, setLoadingPercentage] = useState<number>(0);
-
+	const [loadingPercentage, setLoadingPercentage] = useState<number>(0);
+	const [progress, setProgress] = useState(0);
+	const [animating, setAnimating] = useState(true);
 
 	const videoRef = useRef<HTMLVideoElement>(
 		null
@@ -54,7 +55,6 @@ function App() {
 		};
 	}, []);
 
-
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setLoadingPercentage((prevPercentage) => {
@@ -68,23 +68,24 @@ function App() {
 		return () => clearInterval(interval);
 	}, []);
 
-	// useEffect(() => {
-	// 	const timeOut = setTimeout(() => {
-	// 		setLoading(false);
-	// 	}, 3000);
+	useEffect(() => {
+		const timeOut = setTimeout(() => {
+			setLoading(false);
+		}, 3500);
 
-	// 	return () => clearTimeout(timeOut);
-	// }, []);
+		return () => clearTimeout(timeOut);
+	}, []);
 
 	return (
 		<div className="font-inter">
-			<GlobeLoader
+			{/* <GlobeLoader
 				loading={loading}
 				loadingPercentage={loadingPercentage}
-			/>
+			/> */}
+			<Loader loading={loading} />
 
-			// {loadingPercentage === 100 && (
-				<>
+			{!loading && (
+				<div>
 					<Cursor
 						cursorType={cursorType}
 						setCursorType={setCursorType}
@@ -109,7 +110,7 @@ function App() {
 					<Experience />
 					<Contact />
 					<Footer />
-				</>
+				</div>
 			)}
 		</div>
 	);
