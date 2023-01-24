@@ -35,6 +35,7 @@
 	box-sizing: border-box;
 	scroll-behavior: smooth;
 	font-size: inherit;
+	scroll-snap-type: y mandatory;
 }
 
 body {
@@ -45,6 +46,16 @@ body {
 	overflow-x: hidden;
 	background-color: hsl(0, 0%, 7%);
 
+	// .snap--section {
+	// 	height: 100vh;
+	// 	// display: flex;
+	// 	// justify-content: center;
+	// 	// align-items: center;
+	// 	// position: relative;
+	// 	scroll-snap-align: ;
+	// 	// perspective: 500px;
+	// }
+	
 	&::-webkit-scrollbar {
 		width: 0.5rem;
 	}

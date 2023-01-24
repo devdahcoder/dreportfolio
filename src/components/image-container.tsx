@@ -27,7 +27,7 @@ const ImageContainer = (props: Props) => {
 						  }
 						: { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
 				}
-				transition={{ duration: 1, delay: 1 }}
+				transition={{ duration: 2, delay: 0.6 }}
 				viewport={{ once: true }}
 				onViewportEnter={() => setIsInView(true)}
 				className={`relative block overflow-hidden pb-[100%] ${classStyle}`}

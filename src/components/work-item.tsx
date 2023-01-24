@@ -23,7 +23,7 @@ const WorkItem = (props: Props) => {
 		visible: (index: number) => ({
 			y: 0,
 			opacity: 1,
-			transition: { ease: "easeInOut", duration: index * 2.5 },
+			transition: { ease: "easeInOut", duration: 1, delay: index * 0.5 },
 		}),
 	};
 

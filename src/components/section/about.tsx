@@ -14,7 +14,7 @@ const About = (props: Props) => {
 	const { cursorType, setCursorType, videoRef, handleVideoPlay } = props;
 
 	return (
-		<section id="about" className="py-20 ">
+		<section id="about" className=" py-20 ">
 			<div
 				className="flex flex-col lg:flex-row px-3 items-center lg:items-start justify-center gap-x-0 md:gap-x-16 lg:gap-x-28 gap-y-20 
 				lg:gap-y-0 w-11/12 sm:w-4/5 mx-auto my-0"
@@ -46,7 +46,7 @@ const About = (props: Props) => {
 						<p>Damilare Adigun</p>
 					</div>
 					<div className="flex flex-col text-base font-medium gap-y-8 lg:gap-y-14 text-white">
-						<div className="flex flex-row items-center gap-x-2">
+						<div className="flex flex-row items-center gap-x-2 tracking-widest-[0.5rem]">
 							<p>Hello</p>
 							<span>
 								<Wave />
@@ -54,16 +54,16 @@ const About = (props: Props) => {
 						</div>
 
 						<div>
-							<p>
-								Hello I am a Product Designer with over two
-								years of experience designing for Saas,
-								Healthcare, E-commerce, Ed-tech, Logistics and
-								I'm currently testing Extended Realities.
+							<p className="tracking-[0.07rem] leading-6">
+								I am a Product Designer with over two years of
+								experience designing for Saas, Healthcare,
+								E-commerce, Ed-tech, Logistics and I'm currently
+								testing Extended Realities.
 							</p>
 						</div>
 
 						<div>
-							<p>
+							<p className="tracking-[0.07rem] leading-6">
 								I have contributed to the launching of several
 								Early-Stage Products as a Freelancer from MVP to
 								Lead-Generating Platforms. I collaborate and
@@ -74,7 +74,9 @@ const About = (props: Props) => {
 							</p>
 						</div>
 						<div>
-							<p>.........and I love Coffee ☕</p>
+							<p className="tracking-[0.07rem] leading-6">
+								.........and I love Coffee ☕
+							</p>
 						</div>
 					</div>
 				</div>

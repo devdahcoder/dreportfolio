@@ -9,7 +9,6 @@ export const useCursor = () => {
 
         const mouseMoveHandler = (event: any) => {
             const { clientX, clientY } = event;
-            console.log("mouseY ==>, mouseX ==>", clientX, clientY);
             setMousePosition({ x: clientX, y: clientY });
         };
 

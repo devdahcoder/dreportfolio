@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import NameRender from '../name-render';
 
 type Props = {}
 
@@ -15,8 +16,63 @@ const Contact = (props: Props) => {
 				</div>
 
 				<div className="text-5xl font-bold font-cabinetgrotesk bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent">
-					<span>Interested in working together?</span> <br />{" "}
-					<span>Let me buy you Coffee</span>
+					{/* <span>Interested in working together?</span> <br />{" "} */}
+					<div className={`flex flex-row gap-x-3`}>
+						<NameRender
+							subContainerClassName={`text-5xl`}
+							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+							textArray={[
+		"I", "n", "t", "e", "r", "e", "s", "t", "e", "d",
+	]}
+						/>
+						<NameRender
+							subContainerClassName={`text-5xl`}
+							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+							textArray={["i", "n"]}
+						/>
+						<NameRender
+							subContainerClassName={`text-5xl`}
+							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+							textArray={["w", "o", "r", "k", "i", "n", "g"]}
+						/>
+						<NameRender
+							subContainerClassName={`text-5xl`}
+							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+							textArray={[
+								"t",
+								"o",
+								"g",
+								"e",
+								"t",
+								"h",
+								"e",
+								"r",
+								"?",
+							]}
+						/>
+					</div>
+					<div className={`flex flex-row gap-x-3`}>
+						<NameRender
+							subContainerClassName={`text-5xl`}
+							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+							textArray={["L", "e", "t"]}
+						/>
+						<NameRender
+							subContainerClassName={`text-5xl`}
+							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+							textArray={["m", "e"]}
+						/>
+						<NameRender
+							subContainerClassName={`text-5xl`}
+							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+							textArray={["b", "u", "y"]}
+						/>
+						<NameRender
+							subContainerClassName={`text-5xl`}
+							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+							textArray={["c", "o", "f", "f", "e", "e"]}
+						/>
+					</div>
 				</div>
 
 				<div>

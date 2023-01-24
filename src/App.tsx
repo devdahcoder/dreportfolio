@@ -82,10 +82,12 @@ function App() {
 				loading={loading}
 				loadingPercentage={loadingPercentage}
 			/> */}
-			<Loader loading={loading} />
+			{/* <Loader loading={loading} />
 
 			{!loading && (
-				<div>
+				
+			)} */}
+			<div>
 					<Cursor
 						cursorType={cursorType}
 						setCursorType={setCursorType}
@@ -111,7 +113,6 @@ function App() {
 					<Contact />
 					<Footer />
 				</div>
-			)}
 		</div>
 	);
 }

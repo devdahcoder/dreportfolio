@@ -15,15 +15,7 @@ const CircleText = (props: Props) => {
 	const splitText = text?.split("");
 
 	return (
-		<motion.div
-			initial={{ x: "200%", opacity: 0.4 }}
-			animate={{ x: 0, opacity: 1 }}
-			transition={{
-				duration: 2,
-				ease: "easeInOut",
-				velocity: 1,
-				delay: 1,
-			}}
+		<div
 			className="w-fit h-fit relative"
 		>
 			<a
@@ -59,7 +51,7 @@ const CircleText = (props: Props) => {
 					})}
 				</p>
 			</div>
-		</motion.div>
+		</div>
 	);
 };
 

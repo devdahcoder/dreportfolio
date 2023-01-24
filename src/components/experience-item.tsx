@@ -20,7 +20,7 @@ const ExperienceItem = (props: Props) => {
 		visible: (index: number) => ({
 			opacity: 1,
 			x: "0",
-			transition: { ease: "easeInOut", duration: index * 2.5 },
+			transition: { ease: "easeInOut", delay: index * 0.5, duration: 0.6 },
 		}),
 	};
 
@@ -31,7 +31,8 @@ const ExperienceItem = (props: Props) => {
 			scale: 1,
 			transition: {
 				ease: "easeInOut",
-				duration: index * 3,
+				duration: 1,
+				delay: index * 0.8,
 			},
 		}),
 	};
