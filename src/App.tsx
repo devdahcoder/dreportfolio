@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
-import Header from "./components/header";
-import Intro from "./components/intro";
-import About from "./components/section/about";
-import Contact from "./components/section/contact";
-import Footer from "./components/section/footer";
-import Experience from "./components/section/experience";
-import Work from "./components/section/work";
+import React, { useEffect, useRef, useState } from "react";
 import { useCursor } from "../hook/index";
 import Cursor from "./components/cursor";
-import Loader from "./components/loader";
 import GlobeLoader from "./components/globe-loader";
+import Header from "./components/header";
+import Loader from "./components/loader";
+import About from "./components/section/about";
+import Contact from "./components/section/contact";
+import Experience from "./components/section/experience";
+import Footer from "./components/section/footer";
+import Hero from "./components/section/hero";
+import Work from "./components/section/work";
+import TextScroll from "./components/text-scroll";
+import Time from "./components/time";
 
 function App() {
 	const { cursorType, mousePosition, setCursorType } = useCursor();
@@ -27,9 +29,7 @@ function App() {
 		setIsVideoPlaying(!isVideoPlaying);
 	};
 
-	useEffect(() => {
-		let isSubscribed = true;
-
+	const videoControlFunction = (isSubscribed: boolean) => {
 		if (isSubscribed) {
 			if (isVideoPlaying) {
 				videoRef.current?.play();
@@ -37,6 +37,12 @@ function App() {
 				videoRef.current?.pause();
 			}
 		}
+	};
+
+	useEffect(() => {
+		let isSubscribed = true;
+
+		videoControlFunction(isSubscribed);
 
 		return () => {
 			isSubscribed = false;
@@ -78,6 +84,7 @@ function App() {
 
 	return (
 		<div className="font-inter">
+			<Time />
 			{/* <GlobeLoader
 				loading={loading}
 				loadingPercentage={loadingPercentage}
@@ -88,31 +95,26 @@ function App() {
 				
 			)} */}
 			<div>
-					<Cursor
-						cursorType={cursorType}
-						setCursorType={setCursorType}
-						mousePosition={mousePosition}
-						isVideoPlaying={isVideoPlaying}
-					/>
-					<Header
-						cursorType={cursorType}
-						setCursorType={setCursorType}
-					/>
-					<Intro
-						cursorType={cursorType}
-						setCursorType={setCursorType}
-					/>
-					<About
-						cursorType={cursorType}
-						setCursorType={setCursorType}
-						videoRef={videoRef}
-						handleVideoPlay={handleVideoPlay}
-					/>
-					<Work />
-					<Experience />
-					<Contact />
-					<Footer />
-				</div>
+				<Cursor
+					cursorType={cursorType}
+					setCursorType={setCursorType}
+					mousePosition={mousePosition}
+					isVideoPlaying={isVideoPlaying}
+				/>
+				<Header cursorType={cursorType} setCursorType={setCursorType} />
+				<Hero cursorType={cursorType} setCursorType={setCursorType} />
+				<TextScroll />
+				<About
+					cursorType={cursorType}
+					setCursorType={setCursorType}
+					videoRef={videoRef}
+					handleVideoPlay={handleVideoPlay}
+				/>
+				<Work />
+				<Experience />
+				<Contact />
+				<Footer />
+			</div>
 		</div>
 	);
 }

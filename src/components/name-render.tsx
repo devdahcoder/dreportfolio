@@ -20,16 +20,16 @@ const NameRender = (props: Props) => {
                 {textArray?.map((char: string, index: number) => {
                     const nameVariant = {
 						hidden: {
-							y: "70%",
+							y: "60%",
 							opacity: 0,
 						},
 						visible: (index: number) => ({
 							y: 0,
 							opacity: 1,
 							transition: {
-								duration: 0.3,
+								duration: 0.1,
 								delay: index * 0.01,
-								ease: "easeInOut",
+								ease: "linear",
 							},
 						}),
 					};
