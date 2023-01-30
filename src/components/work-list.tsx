@@ -1,27 +1,20 @@
-import React from 'react'
-import WorkItem from './work-item';
-import {workContent} from '../../content/work-content'
-import { IWork } from '../../interface';
+import React from "react";
+import WorkItem from "./work-item";
+import { workContent } from "../../content/work-content";
+import { IWork } from "../../interface";
 import { motion } from "framer-motion";
 
-type Props = {}
+type Props = {};
 
 const WorkList = (props: Props) => {
-
-    const workVariant = {
+	const workVariant = {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
-			// transition: {
-			// 	ease: "easeInOut",
-			// 	delayChildren: 0.5,
-			// 	duration: 3,
-			// 	staggerChildren: 0.3,
-			// },
 		},
 	};
-    
-    return (
+
+	return (
 		<motion.div
 			variants={workVariant}
 			initial="hidden"
@@ -46,6 +39,6 @@ const WorkList = (props: Props) => {
 			})}
 		</motion.div>
 	);
-}
+};
 
-export default WorkList
+export default WorkList;

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 type Props = {
 	className?: string;
 	imageLink?: string;
+	index?: number;
 };
 
 const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
@@ -27,7 +28,7 @@ const ImageContainer = (props: Props) => {
 						  }
 						: { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
 				}
-				transition={{ duration: 2, delay: 0.6 }}
+				transition={{ duration: 0.5, delay: 0.001 }}
 				viewport={{ once: true }}
 				onViewportEnter={() => setIsInView(true)}
 				className={`relative block overflow-hidden pb-[100%] ${classStyle}`}

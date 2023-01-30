@@ -1,10 +1,17 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-type Props = { text?: string; index?: number; containerClassName?: string; className?: string; children?: React.ReactNode; };
+type Props = {
+	text?: string;
+	index?: number;
+	containerClassName?: string;
+	className?: string;
+	children?: React.ReactNode;
+	delay?: number | undefined;
+};
 
 const HeroText = (props: Props) => {
-	const { index, text, className, containerClassName, children } = props;
+	const { index, text, className, containerClassName, children, delay } = props;
 	const textContext = {
 		hidden: {
 			y: "100%",
@@ -15,7 +22,7 @@ const HeroText = (props: Props) => {
 			opacity: 1,
 			transition: {
 				duration: 0.1,
-				delay: index * 0.001,
+				delay: index * (delay ?? 0.001),
 				ease: "easeInOut",
 			},
 		}),

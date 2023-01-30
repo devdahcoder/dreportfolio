@@ -17,13 +17,24 @@ const Contact = (props: Props) => {
 
 				<div className="text-5xl font-bold font-cabinetgrotesk bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent">
 					{/* <span>Interested in working together?</span> <br />{" "} */}
-					<div className={`flex flex-row gap-x-3`}>
+					<div
+						className={`flex flex-row items-center flex-wrap  gap-x-3`}
+					>
 						<NameRender
 							subContainerClassName={`text-5xl`}
 							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
 							textArray={[
-		"I", "n", "t", "e", "r", "e", "s", "t", "e", "d",
-	]}
+								"I",
+								"n",
+								"t",
+								"e",
+								"r",
+								"e",
+								"s",
+								"t",
+								"e",
+								"d",
+							]}
 						/>
 						<NameRender
 							subContainerClassName={`text-5xl`}
