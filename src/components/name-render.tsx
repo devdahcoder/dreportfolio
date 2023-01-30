@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from "framer-motion";
 
 type Props = {
-    textArray?: Array<string>;
+    textArray?: string[];
     containerClassName?: string;
     subContainerClassName?: string;
     className?: string;
@@ -12,7 +12,7 @@ type Props = {
 
 const NameRender = (props: Props) => {
 
-    const { textArray, className, containerClassName, subContainerClassName, delay, wait } = props
+    const { textArray, className, containerClassName, subContainerClassName, delay, wait } = props;
 
     return (
 		<div className={` flex flex-row items-center justify-center ${containerClassName}`}>
@@ -28,7 +28,7 @@ const NameRender = (props: Props) => {
 							opacity: 1,
 							transition: {
 								duration: 0.1,
-								delay: index * 0.01,
+								delay: index * 0.02,
 								ease: "linear",
 							},
 						}),
@@ -41,7 +41,7 @@ const NameRender = (props: Props) => {
 							whileInView="visible"
 							viewport={{ once: true }}
 							key={index}
-							className={` my-5 ${className}`}
+							className={`${className}`}
 						>
 							{char}
 						</motion.span>

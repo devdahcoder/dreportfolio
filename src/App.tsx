@@ -103,7 +103,7 @@ function App() {
 				/>
 				<Header cursorType={cursorType} setCursorType={setCursorType} />
 				<Hero cursorType={cursorType} setCursorType={setCursorType} />
-				<TextScroll />
+				{/* <TextScroll />
 				<About
 					cursorType={cursorType}
 					setCursorType={setCursorType}
@@ -113,7 +113,7 @@ function App() {
 				<Work />
 				<Experience />
 				<Contact />
-				<Footer />
+				<Footer /> */}
 			</div>
 		</div>
 	);

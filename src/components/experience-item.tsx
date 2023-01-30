@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import HeroText from "./hero-text";
 
 type Props = {
 	index?: number;
@@ -39,14 +40,16 @@ const ExperienceItem = (props: Props) => {
 
 	return (
 		<motion.li
-			custom={index}
-			variants={experienceItemVariant}
+			// custom={index}
+			// variants={experienceItemVariant}
 			className="list-none experience--li"
 		>
 			<div className="flex flex-col gap-y-5 experience--li--div--child w-full max-w-[90%] lg:max-w-[75%]">
-				<a className="text-5xl md:text-7xl font-bold text-white">
-					{text}
-				</a>
+				<HeroText
+					index={index}
+					text={text}
+					className={`text-5xl md:text-7xl font-bold text-white`}
+				/>
 				<motion.div
 					custom={index}
 					variants={experienceDetailVariant}
