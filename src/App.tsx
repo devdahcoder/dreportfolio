@@ -102,10 +102,11 @@ function App() {
 		let isSubscribed = true;
 
 		if (isSubscribed) {
-			if (hasPageCompletedLoading) {
-				document.body.style.overflowY = "visible";
+			if (!hasPageCompletedLoading) {
+				document.body.classList.add("hide-scroll-bar");
+				
 			} else {
-				document.body.style.overflowY = "hidden";
+				document.body.classList.remove("hide-scroll-bar");
 			}
 		}
 

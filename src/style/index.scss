@@ -43,7 +43,7 @@ body {
 	font-family: Inter, CabinetGrotesk, -apple-system, Satoshi,
 		BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 		Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	overflow: hidden;
+	overflow-x: hidden;
 	background-color: hsl(0, 0%, 7%);
 
 	// .snap--section {
@@ -55,7 +55,9 @@ body {
 	// 	scroll-snap-align: ;
 	// 	// perspective: 500px;
 	// }
+
 	
+
 	&::-webkit-scrollbar {
 		width: 0.5rem;
 	}
@@ -212,4 +214,16 @@ body {
 			font-weight: bold;
 		}
 	}
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scroll-bar::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scroll-bar {
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
 }
