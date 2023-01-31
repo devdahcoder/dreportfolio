@@ -13,6 +13,7 @@ import SectionContainer from "../section-container";
 
 type Props = {
 	cursorType: string;
+	hasPageCompletedLoading?: boolean;
 	setCursorType: React.Dispatch<React.SetStateAction<string>>;
 };
 
@@ -47,8 +48,7 @@ const Hero = (props: Props) => {
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({ target: ref });
 	const y = useParallax(scrollYProgress, 300);
-
-	const { cursorType, setCursorType } = props;
+	const { cursorType, setCursorType, hasPageCompletedLoading } = props;
 
 	const nameVariant = {
 		hidden: {
@@ -58,7 +58,7 @@ const Hero = (props: Props) => {
 			y: 0,
 			transition: {
 				ease: "linear",
-				duration: 0.3,
+				duration: 0.5,
 			},
 		},
 	};
@@ -80,7 +80,7 @@ const Hero = (props: Props) => {
 				<motion.div
 					initial="hidden"
 					variants={nameVariant}
-					whileInView="visible"
+					animate={hasPageCompletedLoading && "visible"}
 					viewport={{ once: true }}
 					className="flex flex-col md:flex-row items-start md:items-center gap-y-2 md:gap-y-0 gap-x-8 text-justify text-[16vw] sm:text-[13vw] md:text-[10.7vw] leading-[1] md:leading-[0.7] font-extrabold 
 					font-cabinetgrotesk text-white after:inline-block after:w-full"
@@ -89,11 +89,13 @@ const Hero = (props: Props) => {
 						textArray={firstName}
 						delay={0.1}
 						className={`md:my-5`}
+						hasPageCompletedLoading={hasPageCompletedLoading}
 					/>
 					<NameRender
 						textArray={lastName}
 						delay={0.2}
 						className={`md:my-5`}
+						hasPageCompletedLoading={hasPageCompletedLoading}
 					/>
 				</motion.div>
 
@@ -101,7 +103,7 @@ const Hero = (props: Props) => {
 					<motion.div
 						variants={heroTextVariant}
 						initial="hidden"
-						whileInView="visible"
+						animate={hasPageCompletedLoading && "visible"}
 						viewport={{ once: true }}
 						className="flex flex-row flex-wrap gap-x-2 items-center text-lg font-medium w-4/5 md:w-2/4 bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent"
 					>
@@ -113,6 +115,9 @@ const Hero = (props: Props) => {
 										index={index}
 										text={text}
 										containerClassName={"w-max"}
+										hasPageCompletedLoading={
+											hasPageCompletedLoading
+										}
 									/>
 								)}
 								{text.toLowerCase() === "shawnexchange" && (
@@ -120,6 +125,9 @@ const Hero = (props: Props) => {
 										key={index}
 										index={index}
 										containerClassName={"w-max"}
+										hasPageCompletedLoading={
+											hasPageCompletedLoading
+										}
 									>
 										<span className="ml-1">
 											<a

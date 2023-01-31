@@ -2,6 +2,7 @@ import React from "react";
 import ImageContainer from "./image-container";
 import { motion } from "framer-motion";
 import HeroText from "./hero-text";
+import ParallaxText from "./parallax-text";
 
 type Props = {
 	index?: number;
@@ -53,7 +54,7 @@ const WorkItem = (props: Props) => {
 			</div>
 			<div className="flex flex-row items-center flex-wrap gap-x-2 relative md:absolute md:-left-36 lg:-left-56 md:top-5 text-4xl sm:text-5xl font-semibold bg-gradient-to-l from-zinc-900 to-gray-100 bg-clip-text text-transparent w-full max-w-[70%] sm:max-w-full">
 				{projectArrayName?.map((name: string, index: number) => (
-					<HeroText
+					<ParallaxText
 						text={name}
 						index={index}
 						containerClassName={"w-max"}

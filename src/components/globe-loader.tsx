@@ -5,15 +5,28 @@ type Props = {
 	className?: string;
 	loading: boolean;
 	loadingPercentage?: number;
+	hasPageCompletedLoading?: boolean;
 };
 
 const GlobeLoader = (props: Props) => {
-	const { className, loading, loadingPercentage } = props;
+	const { className, loading, loadingPercentage, hasPageCompletedLoading } =
+		props;
 	return (
 		<motion.div
+			initial={{ zIndex: 100, backgroundColor: `black` }}
+			animate={
+				hasPageCompletedLoading && {
+					zIndex: 0,
+					backgroundColor: ``,
+					transition: {
+						ease: "linear",
+						duration: 0.5,
+					},
+				}
+			}
 			className={`${
-				loadingPercentage === 100 ? "z-0 pointer-events-none" : "bg-black z-50"
-			} blur-3xl fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center transition-all duration-500 ease-in-out`}
+				hasPageCompletedLoading && "pointer-events-none blur-3xl"
+			}  fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center`}
 		>
 			<div
 				className={`relative globe--container w-44 h-44 md:w-60 md:h-60 lg:w-80 lg:h-80 ${className}`}
@@ -22,7 +35,7 @@ const GlobeLoader = (props: Props) => {
 				<motion.p
 					initial={{ opacity: 0.1 }}
 					animate={
-						loadingPercentage === 100
+						hasPageCompletedLoading
 							? { opacity: 0 }
 							: { opacity: 1 }
 					}

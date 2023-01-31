@@ -1,9 +1,22 @@
 import React, { useState } from 'react'
-import NameRender from '../name-render';
+import ParallaxCharacter from "../parallax-character";
 
 type Props = {}
 
 const Contact = (props: Props) => {
+
+	const [contactText, setContactText] = React.useState<Array<Array<string>>>([
+		["I", "n", "t", "e", "r", "e", "s", "t", "e", "d"],
+		["i", "n"],
+		["w", "o", "r", "k", "i", "n", "g"],
+		["t", "o", "g", "e", "t", "h", "e", "r", "?"],
+		["L", "e", "t"],
+		["m", "e"],
+		["b", "u", "y"],
+		["y", "o", "u"],
+		["c", "o", "f", "f", "e", "e"],
+	]);
+
     return (
 		<div className="py-20 bg-[#151515]">
 			<div className="flex flex-col items-start justify-start gap-y-5 w-4/5 sm:my-0 sm:mx-auto px-3 transition-all duration-500 ease-in-out">
@@ -20,69 +33,26 @@ const Contact = (props: Props) => {
 					<div
 						className={`flex flex-row items-center flex-wrap  gap-x-3`}
 					>
-						<NameRender
-							subContainerClassName={`text-5xl`}
-							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
-							textArray={[
-								"I",
-								"n",
-								"t",
-								"e",
-								"r",
-								"e",
-								"s",
-								"t",
-								"e",
-								"d",
-							]}
-						/>
-						<NameRender
-							subContainerClassName={`text-5xl`}
-							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
-							textArray={["i", "n"]}
-						/>
-						<NameRender
-							subContainerClassName={`text-5xl`}
-							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
-							textArray={["w", "o", "r", "k", "i", "n", "g"]}
-						/>
-						<NameRender
-							subContainerClassName={`text-5xl`}
-							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
-							textArray={[
-								"t",
-								"o",
-								"g",
-								"e",
-								"t",
-								"h",
-								"e",
-								"r",
-								"?",
-							]}
-						/>
+						{contactText
+							?.slice(0, 4)
+							?.map((arrayText: Array<string>, index: number) => (
+								<ParallaxCharacter
+									subContainerClassName={`text-5xl`}
+									className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+									textArray={arrayText}
+								/>
+							))}
 					</div>
 					<div className={`flex flex-row gap-x-3`}>
-						<NameRender
-							subContainerClassName={`text-5xl`}
-							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
-							textArray={["L", "e", "t"]}
-						/>
-						<NameRender
-							subContainerClassName={`text-5xl`}
-							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
-							textArray={["m", "e"]}
-						/>
-						<NameRender
-							subContainerClassName={`text-5xl`}
-							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
-							textArray={["b", "u", "y"]}
-						/>
-						<NameRender
-							subContainerClassName={`text-5xl`}
-							className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
-							textArray={["c", "o", "f", "f", "e", "e"]}
-						/>
+						{contactText
+							?.slice(4)
+							?.map((arrayText: Array<string>, index: number) => (
+								<ParallaxCharacter
+									subContainerClassName={`text-5xl`}
+									className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+									textArray={arrayText}
+								/>
+							))}
 					</div>
 				</div>
 

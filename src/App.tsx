@@ -18,6 +18,8 @@ function App() {
 	const [isVideoPlaying, setIsVideoPlaying] = useState<boolean>(true);
 	const [loading, setLoading] = useState<boolean>(true);
 	const [loadingPercentage, setLoadingPercentage] = useState<number>(0);
+	const [hasPageCompletedLoading, setHasPageCompletedLoading] =
+		useState<boolean>(false);
 	const [progress, setProgress] = useState(0);
 	const [animating, setAnimating] = useState(true);
 
@@ -82,19 +84,51 @@ function App() {
 		return () => clearTimeout(timeOut);
 	}, []);
 
+	useEffect(() => {
+		let isSubscribed = true;
+
+		if (isSubscribed) {
+			if (loadingPercentage === 100) {
+				setHasPageCompletedLoading(true);
+			}
+		}
+
+		return () => {
+			isSubscribed = false;
+		};
+	}, [loadingPercentage]);
+
+	useEffect(() => {
+		let isSubscribed = true;
+
+		if (isSubscribed) {
+			if (hasPageCompletedLoading) {
+				document.body.style.overflowY = "visible";
+			} else {
+				document.body.style.overflowY = "hidden";
+			}
+		}
+
+		return () => {
+			isSubscribed = false;
+		};
+	}, [hasPageCompletedLoading]);
+
 	return (
 		<div className="font-inter">
 			<Time />
-			{/* <GlobeLoader
+			<GlobeLoader
 				loading={loading}
 				loadingPercentage={loadingPercentage}
-			/> */}
-			{/* <Loader loading={loading} />
-
-			{!loading && (
-				
-			)} */}
-			<div>
+				hasPageCompletedLoading={hasPageCompletedLoading}
+			/>
+			<div
+				className={`${
+					loadingPercentage !== 100
+						? "pointer-events-none"
+						: "pointer-events-auto"
+				}`}
+			>
 				<Cursor
 					cursorType={cursorType}
 					setCursorType={setCursorType}
@@ -102,7 +136,11 @@ function App() {
 					isVideoPlaying={isVideoPlaying}
 				/>
 				<Header cursorType={cursorType} setCursorType={setCursorType} />
-				<Hero cursorType={cursorType} setCursorType={setCursorType} />
+				<Hero
+					cursorType={cursorType}
+					setCursorType={setCursorType}
+					hasPageCompletedLoading={hasPageCompletedLoading}
+				/>
 				<TextScroll />
 				<About
 					cursorType={cursorType}

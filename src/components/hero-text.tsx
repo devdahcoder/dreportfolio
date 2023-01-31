@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimationControls, TargetAndTransition, VariantLabels, motion } from "framer-motion";
 import React from "react";
 
 type Props = {
@@ -8,10 +8,20 @@ type Props = {
 	className?: string;
 	children?: React.ReactNode;
 	delay?: number | undefined;
+	hasPageCompletedLoading?: boolean;
+	animate?: boolean | VariantLabels | AnimationControls | TargetAndTransition | undefined
 };
 
 const HeroText = (props: Props) => {
-	const { index, text, className, containerClassName, children, delay } = props;
+	const {
+		index,
+		text,
+		className,
+		containerClassName,
+		children,
+		delay,
+		hasPageCompletedLoading,
+	} = props;
 	const textContext = {
 		hidden: {
 			y: "100%",
@@ -21,8 +31,8 @@ const HeroText = (props: Props) => {
 			y: 0,
 			opacity: 1,
 			transition: {
-				duration: 0.1,
-				delay: index * (delay ?? 0.001),
+				duration: 0.3,
+				delay: index * (delay ?? 0.03),
 				ease: "easeInOut",
 			},
 		}),
@@ -36,6 +46,9 @@ const HeroText = (props: Props) => {
 				<motion.div
 					custom={index}
 					variants={textContext}
+					initial="hidden"
+					animate={hasPageCompletedLoading && "visible"}
+					viewport={{ once: true }}
 					className={`text-white ${className}`}
 				>
 					{text}
