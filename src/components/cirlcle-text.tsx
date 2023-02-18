@@ -38,12 +38,13 @@ const CircleText = (props: Props) => {
 					{splitText?.map((letter, index) => {
 						return (
 							<span
+								key={index}
 								style={{
 									transform: `rotate(${index * 18.0}deg)`,
 									transformOrigin: `0 70px`,
 								}}
 								className={`text-base z-0 absolute left-1/2 font-inter bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent`}
-								key={index}
+								
 							>
 								{letter}
 							</span>

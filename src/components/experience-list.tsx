@@ -37,6 +37,7 @@ const ExperienceList = (props: Props) => {
 
 				return (
 					<ExperienceItem
+						key={index}
 						index={index}
 						text={text}
 						detail={detail}

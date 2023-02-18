@@ -108,7 +108,7 @@ const Hero = (props: Props) => {
 						className="flex flex-row flex-wrap gap-x-2 items-center text-lg font-medium w-4/5 md:w-2/4 bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent"
 					>
 						{heroTextArray?.map((text: string, index: number) => (
-							<>
+							<div key={index}>
 								{text.toLowerCase() !== "shawnexchange" && (
 									<HeroText
 										key={index}
@@ -141,7 +141,7 @@ const Hero = (props: Props) => {
 										</span>
 									</HeroText>
 								)}
-							</>
+							</div>
 						))}
 					</motion.div>
 

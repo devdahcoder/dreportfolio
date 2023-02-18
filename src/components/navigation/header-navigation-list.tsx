@@ -28,9 +28,10 @@ const HeaderNavigationList = (props: Props) => {
 					} = props;
 
 					return (
-						<>
+						<div key={index}>
 							{type === NAVIGATION_TYPE.LINK && (
 								<HeaderNavigationItem
+									key={index}
 									id={id}
 									className={className}
 									href={href}
@@ -41,10 +42,12 @@ const HeaderNavigationList = (props: Props) => {
 									renderLink={
 										<a
 											onMouseEnter={() =>
-												setCursorType && setCursorType("hover--link")
+												setCursorType &&
+												setCursorType("hover--link")
 											}
 											onMouseLeave={() =>
-												setCursorType &&  setCursorType("")
+												setCursorType &&
+												setCursorType("")
 											}
 											href={`https://${href}`}
 											target="_blank"
@@ -59,6 +62,7 @@ const HeaderNavigationList = (props: Props) => {
 							)}
 							{type === NAVIGATION_TYPE.STATIC && (
 								<HeaderNavigationItem
+									key={index}
 									id={id}
 									className={className}
 									href={href}
@@ -69,10 +73,12 @@ const HeaderNavigationList = (props: Props) => {
 									renderLink={
 										<a
 											onMouseEnter={() =>
-												setCursorType &&  setCursorType("hover--link")
+												setCursorType &&
+												setCursorType("hover--link")
 											}
 											onMouseLeave={() =>
-												setCursorType &&  setCursorType("")
+												setCursorType &&
+												setCursorType("")
 											}
 											href={`${href}`}
 											style={style}
@@ -83,7 +89,7 @@ const HeaderNavigationList = (props: Props) => {
 									}
 								/>
 							)}
-						</>
+						</div>
 					);
 				})}
 		</div>

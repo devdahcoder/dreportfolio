@@ -26,6 +26,7 @@ const HeaderSocialLinkList = (props: Props) => {
 
 					return (
 						<HeaderSocialLinkItem
+							key={index}
 							id={id}
 							className={className}
 							href={href}

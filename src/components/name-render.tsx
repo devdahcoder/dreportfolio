@@ -44,12 +44,12 @@ const NameRender = (props: Props) => {
 					};
                     return (
 						<motion.span
+							key={index}
 							initial="hidden"
 							custom={index}
 							variants={nameVariant}
 							animate={hasPageCompletedLoading && "visible"}
 							viewport={{ once: true }}
-							key={index}
 							className={`${className}`}
 						>
 							{char}

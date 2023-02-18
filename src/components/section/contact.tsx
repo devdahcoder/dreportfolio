@@ -37,6 +37,7 @@ const Contact = (props: Props) => {
 							?.slice(0, 4)
 							?.map((arrayText: Array<string>, index: number) => (
 								<ParallaxCharacter
+									key={index}
 									subContainerClassName={`text-5xl`}
 									className={`!my-1 text-5xl text-white text-transparent`}
 									textArray={arrayText}
@@ -48,6 +49,7 @@ const Contact = (props: Props) => {
 							?.slice(4)
 							?.map((arrayText: Array<string>, index: number) => (
 								<ParallaxCharacter
+									key={index}
 									subContainerClassName={`text-5xl`}
 									className={`!my-1 text-5xl text-white text-transparent`}
 									textArray={arrayText}
