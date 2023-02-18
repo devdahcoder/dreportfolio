@@ -38,7 +38,7 @@ const Contact = (props: Props) => {
 							?.map((arrayText: Array<string>, index: number) => (
 								<ParallaxCharacter
 									subContainerClassName={`text-5xl`}
-									className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+									className={`!my-1 text-5xl text-white text-transparent`}
 									textArray={arrayText}
 								/>
 							))}
@@ -49,7 +49,7 @@ const Contact = (props: Props) => {
 							?.map((arrayText: Array<string>, index: number) => (
 								<ParallaxCharacter
 									subContainerClassName={`text-5xl`}
-									className={`!my-1 text-5xl bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent`}
+									className={`!my-1 text-5xl text-white text-transparent`}
 									textArray={arrayText}
 								/>
 							))}
