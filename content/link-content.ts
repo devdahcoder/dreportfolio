@@ -69,7 +69,7 @@ export const headerNavigationLink: IHeaderNavigationLink[] = [
     },
     {
         id: 2,
-        text: "Works",
+        text: "My Works",
         href: "#works",
         type: NAVIGATION_TYPE.STATIC
     },

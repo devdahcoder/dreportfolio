@@ -11,7 +11,7 @@ const SectionContainer = (props: Props) => {
 	const { className, containerClassName, children, id } = props;
 	return (
 		<section id={`${id}`} className={`${containerClassName}`}>
-			<div className={`w-4/5 mt-0 mx-auto ${className}`}>{children}</div>
+			<div className={`w-[85%] mt-0 mx-auto ${className}`}>{children}</div>
 		</section>
 	);
 };
