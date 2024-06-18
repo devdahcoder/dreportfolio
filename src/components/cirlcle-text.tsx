@@ -31,8 +31,8 @@ const CircleText = (props: Props) => {
 			<div
 				className={`
             rounded-full text-center font-inter animate-spin-slow 
-            h-36 
-            w-36 ${className}`}
+            h-28 
+            w-28 ${className}`}
 			>
 				<p>
 					{splitText?.map((letter, index) => {
@@ -41,9 +41,9 @@ const CircleText = (props: Props) => {
 								key={index}
 								style={{
 									transform: `rotate(${index * 18.0}deg)`,
-									transformOrigin: `0 70px`,
+									transformOrigin: `0 55px`,
 								}}
-								className={`text-base z-0 absolute left-1/2 font-inter bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent`}
+								className={`text-sm z-0 absolute left-1/2 font-inter bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent`}
 								
 							>
 								{letter}

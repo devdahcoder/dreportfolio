@@ -142,7 +142,7 @@ function App() {
 					setCursorType={setCursorType}
 					hasPageCompletedLoading={hasPageCompletedLoading}
 				/>
-				<TextScroll />
+				{/* <TextScroll /> */}
 				<About
 					cursorType={cursorType}
 					setCursorType={setCursorType}

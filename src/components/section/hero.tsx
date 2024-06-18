@@ -75,7 +75,7 @@ const Hero = (props: Props) => {
 	return (
     <section ref={ref} className={`snap--section py-24 h-screen`}>
       <div
-        className={`border flex flex-col gap-y-5 md:gap-y-5 w-11/12 md:w-[85%] mt-0 mx-auto`}
+        className={` flex flex-col gap-y-5 md:gap-y-5 w-11/12 md:w-[85%] mt-0 mx-auto`}
       >
         <motion.div
           initial="hidden"

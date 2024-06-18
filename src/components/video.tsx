@@ -29,7 +29,7 @@ const Video = (props: Props) => {
 			className="block w-full"
 		>
 			<div
-				className={`relative block overflow-hidden pb-[100%] ${classStyle}`}
+				className={`relative block overflow-hidden pb-[100%]  ${classStyle}`}
 			>
 				<video
 					ref={props.videoRef}

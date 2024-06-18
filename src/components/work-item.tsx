@@ -42,7 +42,7 @@ const WorkItem = (props: Props) => {
 		<motion.div
 			// custom={index}
 			// variants={workItemVariant}
-			className="flex flex-col-reverse items-start text-start justify-start gap-y-10 relative font-cabinetgrotesk"
+			className=" flex flex-col-reverse items-start text-start justify-start gap-y-10 relative font-cabinetgrotesk"
 		>
 			<div className="w-full max-w-[32rem]">
 				<ImageContainer
