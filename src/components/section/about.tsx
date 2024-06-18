@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Wave from "../../../icon/wave";
 import ImageContainer from "../image-container";
 import Video from "../video";
@@ -7,12 +7,51 @@ import CircleText from "../cirlcle-text";
 type Props = {
   cursorType: string;
   setCursorType: React.Dispatch<React.SetStateAction<string>>;
-  videoRef?: React.MutableRefObject<HTMLVideoElement>;
-  handleVideoPlay: () => void;
 };
 
 const About = (props: Props) => {
-  const { cursorType, setCursorType, videoRef, handleVideoPlay } = props;
+  const { cursorType, setCursorType } = props;
+
+  const [isVideoPlaying, setIsVideoPlaying] = useState<boolean>(true);
+  const videoRef = useRef<HTMLVideoElement>(
+    null,
+  ) as React.MutableRefObject<HTMLVideoElement>;
+
+  const handleVideoPlay = () => {
+    setIsVideoPlaying(!isVideoPlaying);
+  };
+
+  const videoControlFunction = (isSubscribed: boolean) => {
+    if (isSubscribed) {
+      if (isVideoPlaying) {
+        videoRef.current?.play();
+      } else {
+        videoRef.current?.pause();
+      }
+    }
+  };
+
+  useEffect(() => {
+    let isSubscribed = true;
+
+    videoControlFunction(isSubscribed);
+
+    return () => {
+      isSubscribed = false;
+    };
+  }, [isVideoPlaying, videoRef]);
+
+  useEffect(() => {
+    let isSubscribed = true;
+
+    if (isSubscribed) {
+      videoRef.current?.play();
+    }
+
+    return () => {
+      isSubscribed = false;
+    };
+  }, []);
 
   return (
     <section id="about" className="pb-20 pt-10 ">

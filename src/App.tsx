@@ -12,10 +12,10 @@ import Hero from "./components/section/hero";
 import Work from "./components/section/work";
 import TextScroll from "./components/text-scroll";
 import Time from "./components/time";
+import Cover from "./components/cover";
 
 function App() {
 	const { cursorType, mousePosition, setCursorType } = useCursor();
-	const [isVideoPlaying, setIsVideoPlaying] = useState<boolean>(true);
 	const [loading, setLoading] = useState<boolean>(true);
 	const [loadingPercentage, setLoadingPercentage] = useState<number>(0);
 	const [hasPageCompletedLoading, setHasPageCompletedLoading] =
@@ -23,45 +23,9 @@ function App() {
 	const [progress, setProgress] = useState(0);
 	const [animating, setAnimating] = useState(true);
 
-	const videoRef = useRef<HTMLVideoElement>(
-		null
-	) as React.MutableRefObject<HTMLVideoElement>;
-
-	const handleVideoPlay = () => {
-		setIsVideoPlaying(!isVideoPlaying);
-	};
-
-	const videoControlFunction = (isSubscribed: boolean) => {
-		if (isSubscribed) {
-			if (isVideoPlaying) {
-				videoRef.current?.play();
-			} else {
-				videoRef.current?.pause();
-			}
-		}
-	};
-
-	useEffect(() => {
-		let isSubscribed = true;
-
-		videoControlFunction(isSubscribed);
-
-		return () => {
-			isSubscribed = false;
-		};
-	}, [isVideoPlaying, videoRef]);
-
-	useEffect(() => {
-		let isSubscribed = true;
-
-		if (isSubscribed) {
-			videoRef.current?.play();
-		}
-
-		return () => {
-			isSubscribed = false;
-		};
-	}, []);
+	
+	
+	
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -114,10 +78,13 @@ function App() {
 			isSubscribed = false;
 		};
 	}, [hasPageCompletedLoading]);
+	
+	
 
 	return (
 		<div className="font-inter">
 			<Time />
+			<Cover hasPageCompletedLoading={hasPageCompletedLoading} />
 			<GlobeLoader
 				loading={loading}
 				loadingPercentage={loadingPercentage}
@@ -130,24 +97,22 @@ function App() {
 						: "pointer-events-auto"
 				}`}
 			>
-				<Cursor
+				{/* <Cursor
 					cursorType={cursorType}
 					setCursorType={setCursorType}
 					mousePosition={mousePosition}
 					isVideoPlaying={isVideoPlaying}
-				/>
+				/> */}
 				<Header cursorType={cursorType} setCursorType={setCursorType} />
 				<Hero
 					cursorType={cursorType}
 					setCursorType={setCursorType}
 					hasPageCompletedLoading={hasPageCompletedLoading}
 				/>
-				{/* <TextScroll /> */}
+				<TextScroll />
 				<About
 					cursorType={cursorType}
 					setCursorType={setCursorType}
-					videoRef={videoRef}
-					handleVideoPlay={handleVideoPlay}
 				/>
 				<Work />
 				<Experience />
