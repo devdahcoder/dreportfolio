@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useCursor } from "../hook/index";
+import { useCursorHook, usePercentageLoaderHook } from "../hook/index";
 import Cursor from "./components/cursor";
 import GlobeLoader from "./components/globe-loader";
 import Header from "./components/header";
@@ -12,86 +12,35 @@ import Hero from "./components/section/hero";
 import Work from "./components/section/work";
 import TextScroll from "./components/text-scroll";
 import Time from "./components/time";
-import Cover from "./components/cover";
 
 function App() {
-	const { cursorType, mousePosition, setCursorType } = useCursor();
-	const [loading, setLoading] = useState<boolean>(true);
-	const [loadingPercentage, setLoadingPercentage] = useState<number>(0);
-	const [hasPageCompletedLoading, setHasPageCompletedLoading] =
-		useState<boolean>(false);
-	const [progress, setProgress] = useState(0);
-	const [animating, setAnimating] = useState(true);
-	const [completed, setCompleted] = useState<boolean>(false);
+  const { cursorType, mousePosition, setCursorType } = useCursorHook();
+
+	const {isLoaded, loadingPercentage} = usePercentageLoaderHook()
 	
-	
-	
+//   useEffect(() => {
+//     let isSubscribed = true;
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setLoadingPercentage((prevPercentage) => {
-				if (prevPercentage === 100) {
-					clearInterval(interval);
-					return prevPercentage;
-				}
-				return prevPercentage + 1;
-			});
-		}, 50);
-		return () => clearInterval(interval);
-	}, []);
+//     if (isSubscribed) {
+//       if (!hasPageCompletedLoading) {
+//         document.body.classList.add("hide-scroll-bar");
+//       } else {
+//         document.body.classList.remove("hide-scroll-bar");
+//       }
+//     }
 
-	useEffect(() => {
-		const timeOut = setTimeout(() => {
-			setLoading(false);
-		}, 4000);
+//     return () => {
+//       isSubscribed = false;
+//     };
+//   }, [hasPageCompletedLoading]);
 
-		return () => clearTimeout(timeOut);
-	}, []);
-
-	useEffect(() => {
-		let isSubscribed = true;
-
-		if (isSubscribed) {
-			if (loadingPercentage === 100) {
-				setHasPageCompletedLoading(true);
-			}
-		}
-
-		return () => {
-			isSubscribed = false;
-		};
-	}, [loadingPercentage]);
-
-	useEffect(() => {
-		let isSubscribed = true;
-
-		if (isSubscribed) {
-			if (!hasPageCompletedLoading) {
-				document.body.classList.add("hide-scroll-bar");
-				
-			} else {
-				document.body.classList.remove("hide-scroll-bar");
-			}
-		}
-
-		return () => {
-			isSubscribed = false;
-		};
-	}, [hasPageCompletedLoading]);
-	
-	
-
-	return (
+  return (
     <div className="font-inter">
-      <Time />
-      <Cover
-        setCompleted={setCompleted}
-        hasPageCompletedLoading={hasPageCompletedLoading}
-      />
+      {/* <Time /> */}
+      {/*  */}
       <GlobeLoader
-        loading={loading}
+        isLoaded={isLoaded}
         loadingPercentage={loadingPercentage}
-        hasPageCompletedLoading={hasPageCompletedLoading}
       />
       <div>
         {/* <Cursor
@@ -101,11 +50,11 @@ function App() {
 					isVideoPlaying={isVideoPlaying}
 				/> */}
         <Header cursorType={cursorType} setCursorType={setCursorType} />
-        <Hero
+        {/* <Hero
           cursorType={cursorType}
           setCursorType={setCursorType}
           hasPageCompletedLoading={completed}
-        />
+        /> */}
         <TextScroll />
         <About cursorType={cursorType} setCursorType={setCursorType} />
         <Work />

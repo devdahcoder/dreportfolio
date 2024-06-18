@@ -1,47 +1,69 @@
-import React from "react";
-import { motion } from "framer-motion";
+import gsap from "gsap";
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 type Props = {
   className?: string;
-  loading: boolean;
   loadingPercentage?: number;
-  hasPageCompletedLoading?: boolean;
+  isLoaded: boolean;
 };
 
 const GlobeLoader = (props: Props) => {
-  const { className, loading, loadingPercentage, hasPageCompletedLoading } =
-    props;
-  return (
-    <motion.div
-      initial={{ zIndex: 20 }}
-      animate={
-        hasPageCompletedLoading && {
-          zIndex: 0,
-          backgroundColor: ``,
-          opacity: 0,
-          display: "none",
-          transition: {
-            ease: "linear",
-            duration: 0.5,
-            delay: 1.3,
+  const { className, loadingPercentage, isLoaded } = props;
+  const container = useRef(null);
+
+
+  useGSAP(
+    () => {
+      if (isLoaded) {
+        gsap.fromTo(
+          ".loader--cover",
+          {
+            yPercent: -100,
+            opacity: 0,
+            delay: 0.7,
           },
-        }
+          {
+            yPercent: 0,
+            opacity: 1,
+            delay: 0.7,
+            onComplete: () => {
+              gsap.fromTo(
+                ".loader--container",
+                { yPercent: 0, opacity: 1, delay: 0.7 },
+                {
+                  yPercent: 100,
+                  opacity: 0.8,
+                  delay: 0.7,
+                  onComplete: () => {gsap.to(".loader--container", {display: "hidden"})}
+                },
+              );
+            },
+          },
+        );
       }
-      className={` border-2 opacity-100 bg-white fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center`}
+      
+    },
+    { dependencies: [isLoaded] },
+  );
+
+  return (
+    <div
+      ref={container}
+      className={`loader--container border-2 opacity-100 bg-white fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center`}
     >
+      <div className="loader--cover w-screen h-screen fixed z-50 bg-black opacity-0"></div>
+
       <div
         className={`border relative bg-white  w-44 h-44 md:w-60 md:h-60 lg:w-full lg:h-full ${className}`}
       >
-        <motion.p
-          initial={{ opacity: 0.1 }}
-          animate={hasPageCompletedLoading ? { opacity: 0 } : { opacity: 1 }}
-          transition={{ ease: "easeInOut", duration: 6 }}
-          className="text-black text-4xl md:text-5xl lg:text-[15rem] font-medium font-cabinetgrotesk absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 md:left-0 md:bottom-0 md:-translate-x-0 md:-translate-y-0"
-        >
+        <p className="text-black text-4xl md:text-5xl lg:text-[15rem] font-medium font-cabinetgrotesk absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 md:left-0 md:bottom-0 md:-translate-x-0 md:-translate-y-0">
           {loadingPercentage}%
-        </motion.p>
+        </p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
