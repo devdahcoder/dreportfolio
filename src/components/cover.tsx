@@ -1,9 +1,12 @@
 import gsap from "gsap";
 import React, { useEffect } from "react";
 
-type Props = { hasPageCompletedLoading: boolean };
+type Props = {
+  hasPageCompletedLoading: boolean;
+  setCompleted: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
-const Cover = ({ hasPageCompletedLoading }: Props) => {
+const Cover = ({ hasPageCompletedLoading, setCompleted }: Props) => {
   useEffect(() => {
     if (hasPageCompletedLoading) {
       gsap.fromTo(
@@ -25,6 +28,7 @@ const Cover = ({ hasPageCompletedLoading }: Props) => {
                 yPercent: 100,
                 opacity: 0.8,
                 delay: 0.7,
+                onComplete: () => setCompleted(true)
               },
             );
           },

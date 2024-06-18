@@ -22,7 +22,7 @@ function App() {
 		useState<boolean>(false);
 	const [progress, setProgress] = useState(0);
 	const [animating, setAnimating] = useState(true);
-
+	const [completed, setCompleted] = useState<boolean>(false);
 	
 	
 	
@@ -82,45 +82,39 @@ function App() {
 	
 
 	return (
-		<div className="font-inter">
-			<Time />
-			<Cover hasPageCompletedLoading={hasPageCompletedLoading} />
-			<GlobeLoader
-				loading={loading}
-				loadingPercentage={loadingPercentage}
-				hasPageCompletedLoading={hasPageCompletedLoading}
-			/>
-			<div
-				className={`${
-					loadingPercentage !== 100
-						? "pointer-events-none"
-						: "pointer-events-auto"
-				}`}
-			>
-				{/* <Cursor
+    <div className="font-inter">
+      <Time />
+      <Cover
+        setCompleted={setCompleted}
+        hasPageCompletedLoading={hasPageCompletedLoading}
+      />
+      <GlobeLoader
+        loading={loading}
+        loadingPercentage={loadingPercentage}
+        hasPageCompletedLoading={hasPageCompletedLoading}
+      />
+      <div>
+        {/* <Cursor
 					cursorType={cursorType}
 					setCursorType={setCursorType}
 					mousePosition={mousePosition}
 					isVideoPlaying={isVideoPlaying}
 				/> */}
-				<Header cursorType={cursorType} setCursorType={setCursorType} />
-				<Hero
-					cursorType={cursorType}
-					setCursorType={setCursorType}
-					hasPageCompletedLoading={hasPageCompletedLoading}
-				/>
-				<TextScroll />
-				<About
-					cursorType={cursorType}
-					setCursorType={setCursorType}
-				/>
-				<Work />
-				<Experience />
-				<Contact />
-				<Footer />
-			</div>
-		</div>
-	);
+        <Header cursorType={cursorType} setCursorType={setCursorType} />
+        <Hero
+          cursorType={cursorType}
+          setCursorType={setCursorType}
+          hasPageCompletedLoading={completed}
+        />
+        <TextScroll />
+        <About cursorType={cursorType} setCursorType={setCursorType} />
+        <Work />
+        <Experience />
+        <Contact />
+        <Footer />
+      </div>
+    </div>
+  );
 }
 
 export default App;

@@ -23,7 +23,7 @@ const GlobeLoader = (props: Props) => {
           transition: {
             ease: "linear",
             duration: 0.5,
-            delay: 1,
+            delay: 1.3,
           },
         }
       }
