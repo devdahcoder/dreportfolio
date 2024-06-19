@@ -15,8 +15,9 @@ import Time from "./components/time";
 
 function App() {
   const { cursorType, mousePosition, setCursorType } = useCursorHook();
+    const [isLoaded, setIsLoaded] = useState<boolean>(true);
 
-	const {isLoaded, loadingPercentage} = usePercentageLoaderHook()
+	// const {isLoaded, loadingPercentage} = usePercentageLoaderHook()
 	
 //   useEffect(() => {
 //     let isSubscribed = true;
@@ -38,10 +39,7 @@ function App() {
     <div className="font-inter">
       {/* <Time /> */}
       {/*  */}
-      <GlobeLoader
-        isLoaded={isLoaded}
-        loadingPercentage={loadingPercentage}
-      />
+      {/* <GlobeLoader isLoaded={isLoaded} loadingPercentage={loadingPercentage} /> */}
       <div>
         {/* <Cursor
 					cursorType={cursorType}
@@ -50,11 +48,11 @@ function App() {
 					isVideoPlaying={isVideoPlaying}
 				/> */}
         <Header cursorType={cursorType} setCursorType={setCursorType} />
-        {/* <Hero
+        <Hero
           cursorType={cursorType}
           setCursorType={setCursorType}
-          hasPageCompletedLoading={completed}
-        /> */}
+          isLoaded={isLoaded}
+        />
         <TextScroll />
         <About cursorType={cursorType} setCursorType={setCursorType} />
         <Work />

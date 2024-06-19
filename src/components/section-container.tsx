@@ -5,12 +5,13 @@ type Props = {
 	containerClassName?: string;
 	children?: React.ReactNode;
 	id?: string;
+	refElement?: any
 };
 
 const SectionContainer = (props: Props) => {
-	const { className, containerClassName, children, id } = props;
+	const { className, containerClassName, children, id, refElement } = props;
 	return (
-		<section id={`${id}`} className={`${containerClassName}`}>
+		<section ref={refElement} id={`${id}`} className={`${containerClassName}`}>
 			<div className={`w-[85%] mt-0 mx-auto ${className}`}>{children}</div>
 		</section>
 	);

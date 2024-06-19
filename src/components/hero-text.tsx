@@ -8,7 +8,7 @@ type Props = {
 	className?: string;
 	children?: React.ReactNode;
 	delay?: number | undefined;
-	hasPageCompletedLoading?: boolean;
+	isLoaded?: boolean;
 	animate?: boolean | VariantLabels | AnimationControls | TargetAndTransition | undefined
 };
 
@@ -20,7 +20,7 @@ const HeroText = (props: Props) => {
 		containerClassName,
 		children,
 		delay,
-		hasPageCompletedLoading,
+		isLoaded,
 	} = props;
 	const textContext = {
 		hidden: {
@@ -47,7 +47,7 @@ const HeroText = (props: Props) => {
 					custom={index}
 					variants={textContext}
 					initial="hidden"
-					animate={hasPageCompletedLoading && "visible"}
+					animate={isLoaded && "visible"}
 					viewport={{ once: true }}
 					className={`text-white ${className}`}
 				>

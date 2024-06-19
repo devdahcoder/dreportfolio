@@ -13,7 +13,7 @@ import SectionContainer from "../section-container";
 
 type Props = {
 	cursorType: string;
-	hasPageCompletedLoading?: boolean;
+	isLoaded?: boolean;
 	setCursorType: React.Dispatch<React.SetStateAction<string>>;
 };
 
@@ -48,7 +48,7 @@ const Hero = (props: Props) => {
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({ target: ref });
 	const y = useParallax(scrollYProgress, 300);
-	const { cursorType, setCursorType, hasPageCompletedLoading } = props;
+	const { cursorType, setCursorType, isLoaded } = props;
 
 	const nameVariant = {
 		hidden: {
@@ -80,7 +80,7 @@ const Hero = (props: Props) => {
         <motion.div
           initial="hidden"
           variants={nameVariant}
-          animate={hasPageCompletedLoading && "visible"}
+          animate={isLoaded && "visible"}
           viewport={{ once: true }}
           className="flex flex-col md:flex-row items-start md:items-center gap-y-2 md:gap-y-0 gap-x-8 text-justify text-[16vw] sm:text-[13vw] md:text-[9vw] leading-[1] md:leading-[0.7] font-extrabold 
 					font-cabinetgrotesk text-white after:inline-block after:w-full"
@@ -89,13 +89,13 @@ const Hero = (props: Props) => {
             textArray={firstName}
             delay={0.1}
             className={`md:my-5`}
-            hasPageCompletedLoading={hasPageCompletedLoading}
+            isLoaded={isLoaded}
           />
           <NameRender
             textArray={lastName}
             delay={0.2}
             className={`md:my-5`}
-            hasPageCompletedLoading={hasPageCompletedLoading}
+            isLoaded={isLoaded}
           />
         </motion.div>
 
@@ -103,7 +103,7 @@ const Hero = (props: Props) => {
           <motion.div
             variants={heroTextVariant}
             initial="hidden"
-            animate={hasPageCompletedLoading && "visible"}
+            animate={isLoaded && "visible"}
             viewport={{ once: true }}
             className="flex flex-row flex-wrap gap-x-2 items-center text-[3.4vw] leading-[1.3] font-medium w-full bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent"
           >
@@ -115,7 +115,7 @@ const Hero = (props: Props) => {
                     index={index}
                     text={text}
                     containerClassName={"w-max"}
-                    hasPageCompletedLoading={hasPageCompletedLoading}
+                    isLoaded={isLoaded}
                   />
                 )}
                 {text.toLowerCase() === "shawnexchange" && (
@@ -123,7 +123,7 @@ const Hero = (props: Props) => {
                     key={index}
                     index={index}
                     containerClassName={"w-max"}
-                    hasPageCompletedLoading={hasPageCompletedLoading}
+                    isLoaded={isLoaded}
                   >
                     <span className="ml-1">
                       <a
@@ -140,12 +140,6 @@ const Hero = (props: Props) => {
               </div>
             ))}
           </motion.div>
-
-          {/* <CircleText
-						text={"- Download - Resume"}
-						cursorType={cursorType}
-						setCursorType={setCursorType}
-					/> */}
         </div>
       </div>
     </section>

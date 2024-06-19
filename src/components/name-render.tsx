@@ -8,7 +8,7 @@ type Props = {
     className?: string;
 	delay?: number;
 	wait?: number;
-	hasPageCompletedLoading?: boolean;
+	isLoaded?: boolean;
 }
 
 const NameRender = (props: Props) => {
@@ -20,7 +20,7 @@ const NameRender = (props: Props) => {
 		subContainerClassName,
 		delay,
 		wait,
-		hasPageCompletedLoading,
+		isLoaded,
 	} = props;
 
     return (
@@ -48,7 +48,7 @@ const NameRender = (props: Props) => {
 							initial="hidden"
 							custom={index}
 							variants={nameVariant}
-							animate={hasPageCompletedLoading && "visible"}
+							animate={isLoaded && "visible"}
 							viewport={{ once: true }}
 							className={`${className}`}
 						>

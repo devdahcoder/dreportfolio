@@ -18,39 +18,22 @@ const About = (props: Props) => {
   ) as React.MutableRefObject<HTMLVideoElement>;
 
   const handleVideoPlay = () => {
-    setIsVideoPlaying(!isVideoPlaying);
-  };
-
-  const videoControlFunction = (isSubscribed: boolean) => {
-    if (isSubscribed) {
-      if (isVideoPlaying) {
-        videoRef.current?.play();
-      } else {
-        videoRef.current?.pause();
-      }
-    }
+    setIsVideoPlaying((prev) => !prev);
   };
 
   useEffect(() => {
-    let isSubscribed = true;
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
 
-    videoControlFunction(isSubscribed);
-
-    return () => {
-      isSubscribed = false;
-    };
-  }, [isVideoPlaying, videoRef]);
+    if (isVideoPlaying) {
+      videoElement.play();
+    } else {
+      videoElement.pause();
+    }
+  }, [isVideoPlaying]);
 
   useEffect(() => {
-    let isSubscribed = true;
-
-    if (isSubscribed) {
-      videoRef.current?.play();
-    }
-
-    return () => {
-      isSubscribed = false;
-    };
+    videoRef.current?.play();
   }, []);
 
   return (

@@ -29,22 +29,26 @@ const GlobeLoader = (props: Props) => {
             yPercent: 0,
             opacity: 1,
             delay: 0.7,
+            duration: 1,
+            ease: "sine.inOut",
             onComplete: () => {
               gsap.fromTo(
                 ".loader--container",
                 { yPercent: 0, opacity: 1, delay: 0.7 },
                 {
                   yPercent: 100,
-                  opacity: 0.8,
                   delay: 0.7,
-                  onComplete: () => {gsap.to(".loader--container", {display: "hidden"})}
+                  duration: 1,
+                  ease: "sine.inOut",
+                  onComplete: () => {
+                    gsap.to(".loader--container", { display: "hidden" });
+                  },
                 },
               );
             },
           },
         );
       }
-      
     },
     { dependencies: [isLoaded] },
   );
@@ -52,7 +56,7 @@ const GlobeLoader = (props: Props) => {
   return (
     <div
       ref={container}
-      className={`loader--container border-2 opacity-100 bg-white fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center`}
+      className={`loader--container border-2 opacity-100 bg-white fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center z-50`}
     >
       <div className="loader--cover w-screen h-screen fixed z-50 bg-black opacity-0"></div>
 
