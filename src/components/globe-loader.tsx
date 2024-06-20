@@ -39,7 +39,7 @@ const GlobeLoader = (props: Props) => {
                   yPercent: 100,
                   delay: 0.7,
                   duration: 1,
-                  ease: "sine.inOut",
+                  ease: "expo.in",
                   onComplete: () => {
                     gsap.to(".loader--container", { display: "hidden" });
                   },

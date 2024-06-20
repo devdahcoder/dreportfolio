@@ -24,7 +24,7 @@ const Header = (props: Props) => {
 
   useGSAP(
     () => {
-      if (inView) {
+      if (entry) {
         gsap.fromTo(
           ".header--container",
           {

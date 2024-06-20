@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { useCursorHook, usePercentageLoaderHook } from "../hook/index";
 import Cursor from "./components/cursor";
-import GlobeLoader from "./components/globe-loader";
-import Header from "./components/header";
 import Loader from "./components/loader";
+import Header from "./components/header";
 import About from "./components/section/about";
 import Contact from "./components/section/contact";
 import Experience from "./components/section/experience";
@@ -13,34 +14,49 @@ import Work from "./components/section/work";
 import TextScroll from "./components/text-scroll";
 import Time from "./components/time";
 
+gsap.registerPlugin(useGSAP);
+
 function App() {
   const { cursorType, mousePosition, setCursorType } = useCursorHook();
-    const [isLoaded, setIsLoaded] = useState<boolean>(true);
+  //   const [isLoaded, setIsLoaded] = useState<boolean>(true);
+  const [isLoadingComplete, setIsLoadingComplete] = useState<boolean>(false);
+  const { isLoaded, loadingPercentage } = usePercentageLoaderHook();
 
-	// const {isLoaded, loadingPercentage} = usePercentageLoaderHook()
-	
-//   useEffect(() => {
-//     let isSubscribed = true;
+  //   useEffect(() => {
+  //     let isSubscribed = true;
 
-//     if (isSubscribed) {
-//       if (!hasPageCompletedLoading) {
-//         document.body.classList.add("hide-scroll-bar");
-//       } else {
-//         document.body.classList.remove("hide-scroll-bar");
-//       }
-//     }
+  //     if (isSubscribed) {
+  //       if (!hasPageCompletedLoading) {
+  //         document.body.classList.add("hide-scroll-bar");
+  //       } else {
+  //         document.body.classList.remove("hide-scroll-bar");
+  //       }
+  //     }
 
-//     return () => {
-//       isSubscribed = false;
-//     };
-//   }, [hasPageCompletedLoading]);
+  //     return () => {
+  //       isSubscribed = false;
+  //     };
+  //   }, [hasPageCompletedLoading]);
+
+  useGSAP(() => {
+    if (isLoadingComplete) {
+      gsap.fromTo(
+        ".content",
+        { display: "none"},
+        { display: "block", delay: 0.5, },
+      );
+    }
+  }, [isLoadingComplete]);
 
   return (
     <div className="font-inter">
       {/* <Time /> */}
-      {/*  */}
-      {/* <GlobeLoader isLoaded={isLoaded} loadingPercentage={loadingPercentage} /> */}
-      <div>
+      <Loader
+        isLoaded={isLoaded}
+        loadingPercentage={loadingPercentage}
+        setIsLoadingComplete={setIsLoadingComplete}
+      />
+      <div className="hidden content">
         {/* <Cursor
 					cursorType={cursorType}
 					setCursorType={setCursorType}
@@ -53,7 +69,7 @@ function App() {
           setCursorType={setCursorType}
           isLoaded={isLoaded}
         />
-        <TextScroll />
+        {/* <TextScroll /> */}
         <About cursorType={cursorType} setCursorType={setCursorType} />
         <Work />
         <Experience />
