@@ -6,8 +6,6 @@ import './style/index.scss';
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <ReactLenis root>
       <App />
-    </ReactLenis>
   </React.StrictMode>,
 );

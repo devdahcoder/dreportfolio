@@ -42,22 +42,18 @@ const Hero = ({ cursorType, setCursorType, isLoaded }: Props) => {
   useGSAP(
     () => {
       if (entry) {
-        console.log("entered");
         gsap.fromTo(
-          ".character",
+          ".hero--character",
           {
             yPercent: 200,
             ease: "power3.out",
-            rotate: "70deg",
             opacity: 0,
           },
           {
             opacity: 1,
-            rotate: "0deg",
             yPercent: 0,
             duration: 1.3,
             ease: "expo.out",
-            stagger: 0.1,
           },
         );
         gsap.fromTo(
@@ -65,16 +61,14 @@ const Hero = ({ cursorType, setCursorType, isLoaded }: Props) => {
           {
             yPercent: 200,
             ease: "power3.out",
-            rotate: "30deg",
             opacity: 0,
           },
           {
             opacity: 1,
-            rotate: "0deg",
             yPercent: 0,
             duration: 1,
             ease: "back.out(1.7)",
-            stagger: 0.1,
+            delay: 0.2
           },
         );
       }
@@ -83,24 +77,24 @@ const Hero = ({ cursorType, setCursorType, isLoaded }: Props) => {
   );
 
   return (
-    <section ref={ref} className={`snap--section pb-24 pt-20 h-screen`}>
+    <section ref={ref} className={`snap--section pt-24 h-screen`}>
       <div
         className={`flex flex-col gap-y-5 md:gap-y-2 w-11/12 md:w-[85%] mt-0 mx-auto`}
       >
         <div
-          className="flex flex-col md:flex-row items-start md:items-center gap-y-2 md:gap-y-0 text-justify text-[16vw] sm:text-[13vw] md:text-[9vw] leading-[1] md:leading-[0.7] font-extrabold 
-					font-cabinetgrotesk text-white after:inline-block after:w-full"
+          className="flex flex-col md:flex-row items-start md:items-center gap-y-2 md:gap-y-0 text-justify text-[16vw] sm:text-[13vw] md:text-[8vw] leading-[1] md:leading-[0.7] font-semibold 
+					font-untitled text-white after:inline-block after:w-full"
         >
           <HeroNameCharacter
             character={name.split("")}
-            characterClassName="character opacity-0"
+            characterClassName="hero--character opacity-0"
             characterElement={characterElement}
             characterContainerElement={characterContainerElement}
           />
         </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-y-12">
-          <div className="flex flex-row flex-wrap gap-x-2 items-center text-[3.4vw] leading-[1.3] font-medium w-full bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent">
+          <div className="flex flex-row flex-wrap gap-x-2 items-center text-[3.4vw] leading-[1.2] font-medium w-full bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent">
             {heroTextArray?.map((text: string, index: number) => (
               <div key={index}>
                 {text.toLowerCase() !== "shawnexchange" && (

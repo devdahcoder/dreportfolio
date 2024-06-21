@@ -18,50 +18,34 @@ gsap.registerPlugin(useGSAP);
 
 function App() {
   const { cursorType, mousePosition, setCursorType } = useCursorHook();
-  //   const [isLoaded, setIsLoaded] = useState<boolean>(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState<boolean>(false);
+  // const [isLoaded, setIsLoaded ] = useState<boolean>(true);
+
   const { isLoaded, loadingPercentage } = usePercentageLoaderHook();
-
-  //   useEffect(() => {
-  //     let isSubscribed = true;
-
-  //     if (isSubscribed) {
-  //       if (!hasPageCompletedLoading) {
-  //         document.body.classList.add("hide-scroll-bar");
-  //       } else {
-  //         document.body.classList.remove("hide-scroll-bar");
-  //       }
-  //     }
-
-  //     return () => {
-  //       isSubscribed = false;
-  //     };
-  //   }, [hasPageCompletedLoading]);
 
   useGSAP(() => {
     if (isLoadingComplete) {
       gsap.fromTo(
-        ".content",
-        { display: "none"},
-        { display: "block", delay: 0.5, },
+        ".main--page",
+        { display: "none" },
+        { display: "block", delay: 0.5 },
       );
     }
   }, [isLoadingComplete]);
 
   return (
     <div className="font-inter">
-      {/* <Time /> */}
+      <Time />
       <Loader
         isLoaded={isLoaded}
         loadingPercentage={loadingPercentage}
         setIsLoadingComplete={setIsLoadingComplete}
       />
-      <div className="hidden content">
+      <div className="hidden main--page">
         {/* <Cursor
 					cursorType={cursorType}
 					setCursorType={setCursorType}
 					mousePosition={mousePosition}
-					isVideoPlaying={isVideoPlaying}
 				/> */}
         <Header cursorType={cursorType} setCursorType={setCursorType} />
         <Hero

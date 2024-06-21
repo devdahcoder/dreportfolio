@@ -39,22 +39,22 @@ const ExperienceItem = (props: Props) => {
 	};
 
 	return (
-		<motion.li className="list-none experience--li">
-			<div className="flex flex-col gap-y-5 experience--li--div--child w-full max-w-[90%] lg:max-w-[75%]">
-				<ParallaxText
-					index={index}
-					text={text}
-					className={`text-5xl md:text-7xl font-bold text-white`}
-				/>
-				<ParallaxText
-					index={index}
-					text={detail}
-					delay={0.09}
-					className={`font-semibold text-xl bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent`}
-				/>
-			</div>
-		</motion.li>
-	);
+    <motion.li className="list-none experience--li">
+      <div className="flex flex-col gap-y-7 leading-relaxed experience--li--div--child w-full max-w-[90%] lg:max-w-[75%]">
+        <ParallaxText
+          index={index}
+          text={text}
+          className={`text-5xl md:text-7xl leading-relaxed font-bold text-white`}
+        />
+        <ParallaxText
+          index={index}
+          text={detail}
+          delay={0.09}
+          className={`font-semibold text-xl bg-gradient-to-tl !text-orange-600`}
+        />
+      </div>
+    </motion.li>
+  );
 };
 
 export default ExperienceItem;

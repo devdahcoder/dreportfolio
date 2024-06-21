@@ -98,17 +98,6 @@ const HeaderNavigationList = (props: Props) => {
     });
   };
 
-//   useGSAP(
-//     () => {
-//       if (inView) {
-// 		linkContainer.forEach((refElement, index) => {
-// 			animateAnchorSection(refElement, index);
-// 		});
-//       }
-//     },
-//     { dependencies: [inView] },
-//   );
-
   return (
     <div className="flex flex-row items-center sm:items-start md:items-center gap-x-4">
       {link &&

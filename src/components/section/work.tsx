@@ -7,19 +7,21 @@ type Props = {};
 
 const Work = (props: Props) => {
 	return (
-		<motion.section id={`works`} className={`py-28`}>
-			<div
-				className={`w-4/5 mt-0 mx-auto flex flex-col items-center gap-y-20 !px-3`}
-			>
-				<div className="text-center">
-					<div className="font-bold font-cabinetgrotesk text-3xl bg-gradient-to-tl from-zinc-300 to-gray-500 bg-clip-text text-transparent">
-						<p>Selected Projects</p>
-					</div>
-				</div>
-				<WorkList />
-			</div>
-		</motion.section>
-	);
+    <motion.section id={`works`} className={`py-28`}>
+      <div
+        className={`w-4/5 mt-0 mx-auto flex flex-col items-center gap-y-24 !px-3`}
+      >
+        <div className="text-start flex flex-row items-start w-[80%] ">
+          <div
+            className="font-semibold font-untitled text-4xl text-[#ADB0AD]"
+          >
+            <p>Selected Works</p>
+          </div>
+        </div>
+        <WorkList />
+      </div>
+    </motion.section>
+  );
 };
 
 export default Work;

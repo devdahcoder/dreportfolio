@@ -22,19 +22,19 @@ const Loader = (props: Props) => {
         gsap.fromTo(
           ".loader--grid--container",
           {
-            opacity: 0,
+            visibility: "hidden",
           },
           {
-            opacity: 1,
+            visibility: "visible",
             onComplete: () => {
               gsap.fromTo(
                 ".loader--grid",
                 {
                   yPercent: -100,
-                  opacity: 0,
+                  visibility: "hidden",
                 },
                 {
-                  opacity: 1,
+                  visibility: "visible",
                   yPercent: 0,
                   stagger: 0.1,
                   duration: 1,
@@ -44,15 +44,15 @@ const Loader = (props: Props) => {
                       ".loader--cover",
                       {
                         yPercent: -100,
-                        opacity: 0,
+                        visibility: "hidden",
                       },
                       {
                         yPercent: 0,
-                        opacity: 1,
+                        visibility: "visible",
                         duration: 0.7,
                         ease: "sine.inOut",
                         onComplete: () => {
-                          setIsLoadingComplete(true)
+                          setIsLoadingComplete(true);
                           gsap.fromTo(
                             ".loader--container",
                             { yPercent: 0, opacity: 1 },
@@ -86,11 +86,14 @@ const Loader = (props: Props) => {
       ref={container}
       className={`loader--container border-2 opacity-100 bg-white fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center z-50`}
     >
-      <div className="loader--cover w-screen h-screen fixed z-50 bg-black opacity-0"></div>
+      <div className="loader--cover w-screen h-screen fixed z-50 bg-black invisible "></div>
 
-      <div className="loader--grid--container w-screen h-screen flex flex-row fixed z-30 opacity-0 ">
-        {Array.of(1, 2, 3, 4, 5, 6)?.map(() => (
-          <div className="loader--grid w-full h-screen bg-slate-400 border-r-slate-400 opacity-0 last:border-none last:border-0"></div>
+      <div className="loader--grid--container w-screen h-screen flex flex-row fixed z-30 invisible ">
+        {Array.of(1, 2, 3, 4, 5, 6)?.map((_, index) => (
+          <div
+            key={index}
+            className="loader--grid w-full h-screen bg-slate-400 border-r-slate-400 invisible last:border-none last:border-0"
+          ></div>
         ))}
       </div>
 

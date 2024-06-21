@@ -42,10 +42,10 @@ const WorkItem = (props: Props) => {
     <motion.div
       // custom={index}
       // variants={workItemVariant}
-      className="flex flex-row items-start gap-x-14 text-start justify-start gap-y-10 relative font-cabinetgrotesk"
+      className="flex flex-row items-start gap-x-13 text-start justify-start gap-y-10 relative font-untitled"
     >
       <div className="flex flex-col items-start justify-start gap-y-7 w-full">
-        <div className="flex flex-row items-start flex-wrap gap-x-2 relative  text-4xl sm:text-5xl font-semibold bg-gradient-to-l from-zinc-900 to-gray-100 bg-clip-text text-transparent w-full max-w-[70%] sm:max-w-full">
+        <div className="flex flex-row items-start flex-wrap gap-x-2 relative text-4xl sm:text-6xl font-medium bg-gradient-to-l from-zinc-900 to-gray-100 bg-clip-text text-transparent w-full">
           {projectArrayName?.map((name: string, index: number) => (
             <ParallaxText
               key={index}
