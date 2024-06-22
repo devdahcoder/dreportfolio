@@ -120,7 +120,7 @@ const Hero = ({ cursorType, setCursorType, isLoaded }: Props) => {
                         rel="noopener noreferrer"
                         className=" text-orange-500 no-underline"
                       >
-                        ShawnExchange
+                        Shawn Exchange
                       </a>
                     </span>
                   </HeroText>

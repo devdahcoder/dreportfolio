@@ -93,9 +93,9 @@ const HeaderNavigationList = (props: Props) => {
   };
 
   const triggerAnchorAnimation = (index: number) => {
-    linkContainer[index].forEach((element: HTMLSpanElement, idx: number) => {
-      animateAnchor(element, idx);
-    });
+    // linkContainer[index].forEach((element: HTMLSpanElement, idx: number) => {
+    //   animateAnchor(element, idx);
+    // });
   };
 
   return (
@@ -141,7 +141,7 @@ const HeaderNavigationList = (props: Props) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       style={style}
-                      className={`w-full flex flex-row items-center px-3 py-2 font-semibold bg-gradient-to-tl from-slate-200 to-gray-100 bg-clip-text text-transparent ${className}`}
+                      className={`w-full flex flex-row items-center px-3 py-2 font-medium bg-gradient-to-tl from-slate-200 to-gray-100 bg-clip-text text-transparent ${className}`}
                     >
                       <NavigationCharacter
                         character={text?.split(" ")}

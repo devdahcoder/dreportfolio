@@ -5,7 +5,7 @@ export const workContent: IWork[] = [
         name: "Shawn Exchange",
         detail: "Designing a convenient and secure platform for buying and selling popular cryptocurrencies and gift cards.",
         href: "",
-        image: "https://images.unsplash.com/photo-1545235617-7a424c1a60cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+        image: "./image/sahwn.png"
     },
     {
         id: 2,
