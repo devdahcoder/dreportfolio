@@ -19,8 +19,6 @@ gsap.registerPlugin(useGSAP);
 function App() {
   const { cursorType, mousePosition, setCursorType } = useCursorHook();
   const [isLoadingComplete, setIsLoadingComplete] = useState<boolean>(false);
-  // const [isLoaded, setIsLoaded ] = useState<boolean>(true);
-
   const { isLoaded, loadingPercentage } = usePercentageLoaderHook();
 
   useGSAP(() => {
@@ -42,11 +40,11 @@ function App() {
         setIsLoadingComplete={setIsLoadingComplete}
       />
       <div className="hidden main--page">
-        {/* <Cursor
+        <Cursor
 					cursorType={cursorType}
 					setCursorType={setCursorType}
 					mousePosition={mousePosition}
-				/> */}
+				/>
         <Header cursorType={cursorType} setCursorType={setCursorType} />
         <Hero
           cursorType={cursorType}

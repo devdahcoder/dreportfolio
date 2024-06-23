@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { useCursorHook } from "../../hook";
 
 type Props = {
 	cursorType: string;
@@ -12,8 +13,8 @@ type Props = {
 };
 
 const Cursor = (props: Props) => {
-	const { cursorType, setCursorType, mousePosition, isVideoPlaying } = props;
-
+	const { isVideoPlaying } = props;
+	  const { cursorType, mousePosition, setCursorType } = useCursorHook();
 	const { x, y } = mousePosition;
 
 	return (
@@ -21,12 +22,12 @@ const Cursor = (props: Props) => {
 			<motion.div
 				className={`circle--cursor ${cursorType} hidden sm:block`}
 				animate={{ x: mousePosition.x - 69, y: mousePosition.y - 69 }}
-				transition={{
-					type: "spring",
-					damping: 3,
-					stiffness: 50,
-					restDelta: 0.001,
-				}}
+				// transition={{
+				// 	type: "spring",
+				// 	damping: 3,
+				// 	stiffness: 50,
+				// 	restDelta: 0.001,
+				// }}
 			>
 				<p
 					className={`${

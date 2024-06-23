@@ -84,7 +84,7 @@ const Loader = (props: Props) => {
   return (
     <div
       ref={container}
-      className={`loader--container border-2 opacity-100 bg-white fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center z-50`}
+      className={`loader--container opacity-100 bg-white fixed top-0 left-0 h-full w-full flex flex-row items-center justify-center z-50`}
     >
       <div className="loader--cover w-screen h-screen fixed z-50 bg-black invisible "></div>
 
@@ -92,15 +92,13 @@ const Loader = (props: Props) => {
         {Array.of(1, 2, 3, 4, 5, 6)?.map((_, index) => (
           <div
             key={index}
-            className="loader--grid w-full h-screen bg-slate-400 border-r-slate-400 invisible last:border-none last:border-0"
+            className="loader--grid w-full h-screen bg-slate-400 border-r-slate-600 invisible last:border-none last:border-0"
           ></div>
         ))}
       </div>
 
-      <div
-        className={`border relative bg-white  w-44 h-44 md:w-60 md:h-60 lg:w-full lg:h-full ${className}`}
-      >
-        <p className="text-black text-4xl md:text-5xl lg:text-[15rem] font-medium font-cabinetgrotesk absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 md:left-0 md:bottom-0 md:-translate-x-0 md:-translate-y-0">
+      <div className={` relative bg-white w-full h-full ${className}`}>
+        <p className="text-black text-9xl lg:text-[15rem] font-medium font-cabinetgrotesk absolute left-0 bottom-0 -translate-x-0 -translate-y-0">
           {loadingPercentage}%
         </p>
       </div>

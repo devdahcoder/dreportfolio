@@ -63,7 +63,7 @@ const GlobeLoader = (props: Props) => {
       <div
         className={`border relative bg-white  w-44 h-44 md:w-60 md:h-60 lg:w-full lg:h-full ${className}`}
       >
-        <p className="text-black text-4xl md:text-5xl lg:text-[15rem] font-medium font-cabinetgrotesk absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 md:left-0 md:bottom-0 md:-translate-x-0 md:-translate-y-0">
+        <p className="text-black text-4xl md:text-5xl lg:text-[15rem] font-medium font-untitled absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 md:left-0 md:bottom-0 md:-translate-x-0 md:-translate-y-0">
           {loadingPercentage}%
         </p>
       </div>

@@ -82,7 +82,7 @@ const Hero = ({ cursorType, setCursorType, isLoaded }: Props) => {
         className={`flex flex-col gap-y-5 md:gap-y-2 w-11/12 md:w-[85%] mt-0 mx-auto`}
       >
         <div
-          className="flex flex-col md:flex-row items-start md:items-center gap-y-2 md:gap-y-0 text-justify text-[16vw] sm:text-[13vw] md:text-[8vw] leading-[1] md:leading-[0.7] font-semibold 
+          className="flex flex-col md:flex-row items-start md:items-center gap-y-2 md:gap-y-0 text-justify text-[10vw] border md:text-[8vw] font-semibold 
 					font-untitled text-white after:inline-block after:w-full"
         >
           <HeroNameCharacter
@@ -115,7 +115,7 @@ const Hero = ({ cursorType, setCursorType, isLoaded }: Props) => {
                   >
                     <span className="ml-1">
                       <a
-                        href="https://www.shawn.exchange/"
+                        href="https://www.shawnexchange.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className=" text-orange-500 no-underline"

@@ -29,6 +29,35 @@ module.exports = {
         },
       },
     },
+    screens: {
+      // For each break point i tend to try and trigger at least three example: xs, xg, xx.
+      // Same with sm, sg, sx
+      xs: { min: "320px" },
+      sm: {
+        min: "480px",
+      },
+      sg: {
+        min: "559px",
+      },
+      mx: {
+        min: "639px",
+      },
+      md: {
+        min: "768px",
+      },
+      ls: {
+        min: "840px",
+      },
+      lg: {
+        min: "1024px",
+      },
+      xl: {
+        min: "1280px",
+      },
+      "2xl": {
+        min: "1920px",
+      },
+    },
   },
   plugins: [],
 };

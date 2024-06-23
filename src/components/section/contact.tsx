@@ -28,7 +28,7 @@ const Contact = (props: Props) => {
             </div>
           </div>
 
-          <div className="text-5xl font-bold font-cabinetgrotesk bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent">
+          <div className="text-5xl font-bold font-untitled bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent">
             {/* <span>Interested in working together?</span> <br />{" "} */}
             <div className={`flex flex-row items-center flex-wrap  gap-x-3`}>
               {contactText
@@ -37,7 +37,7 @@ const Contact = (props: Props) => {
                   <ParallaxCharacter
                     key={index}
                     subContainerClassName={`text-5xl`}
-                    className={`!my-1 text-5xl text-white text-transparent`}
+                    className={`!my-1 text-5xl text-white text-transparent font-untitled`}
                     textArray={arrayText}
                   />
                 ))}
@@ -49,7 +49,7 @@ const Contact = (props: Props) => {
                   <ParallaxCharacter
                     key={index}
                     subContainerClassName={`text-5xl`}
-                    className={`!my-1 text-5xl text-white text-transparent`}
+                    className={`!my-1 text-5xl text-white text-transparent font-untitled`}
                     textArray={arrayText}
                   />
                 ))}
