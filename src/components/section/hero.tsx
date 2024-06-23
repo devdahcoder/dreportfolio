@@ -94,7 +94,7 @@ const Hero = ({ cursorType, setCursorType, isLoaded }: Props) => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-y-12">
-          <div className="flex flex-row flex-wrap gap-x-2 items-center text-[3.4vw] leading-[1.2] font-medium w-full bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent">
+          <div className="flex flex-row flex-wrap gap-x-2 items-center text-[3.4vw] leading-[1.1] font-medium w-full bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent">
             {heroTextArray?.map((text: string, index: number) => (
               <div key={index}>
                 {text.toLowerCase() !== "shawnexchange" && (

@@ -11,7 +11,7 @@ const Work = (props: Props) => {
       <div
         className={`w-4/5 mt-0 mx-auto flex flex-col items-center gap-y-24 !px-3`}
       >
-        <div className="text-start flex flex-row items-start w-[80%] ">
+        <div className="text-start flex flex-row items-start w-full ">
           <div
             className="font-semibold font-untitled text-4xl text-[#ADB0AD]"
           >

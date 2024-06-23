@@ -20,7 +20,9 @@ type Props = {
 
 const Header = (props: Props) => {
   const { cursorType, setCursorType } = props;
-  const { ref, inView, entry } = useInView();
+  const { ref, inView, entry } = useInView({
+    triggerOnce: true,
+  });
 
   useGSAP(
     () => {

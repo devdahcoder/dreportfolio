@@ -29,7 +29,7 @@ const HeroNameCharacter = ({
           className={`${subContainerClassName}`}
         >
           <div
-            className={`min-h-max min-w-fit flex flex-row px-0.5 py-4  overflow-hidden ${characterContainerClassName}`}
+            className={`min-h-max min-w-fit flex flex-row leading-tight overflow-hidden ${characterContainerClassName}`}
           >
             {text?.split(" ")?.map((text: string) => (
               <div
