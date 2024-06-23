@@ -38,7 +38,7 @@ const About = (props: Props) => {
 
   return (
     <section id="about" className="pb-20 ">
-      <div className="flex flex-col gap-y-16 w-[85%] mx-auto my-0">
+      <div className="flex flex-col gap-y-16 w-11/12 md:w-[85%] mx-auto my-0">
         <div
           className={`flex flex-col lg:flex-row px-3 items-center lg:items-start justify-center gap-x-0 md:gap-x-16 lg:gap-x-28 gap-y-20 
 				lg:gap-y-0 `}
@@ -62,7 +62,7 @@ const About = (props: Props) => {
             className="flex flex-col gap-y-10 w-full 
                 "
           >
-            <div className="flex flex-col text-[1.4rem] font-medium gap-y-10 text-white">
+            <div className="flex flex-col text-[1.1rem] md:text-[1.4rem] font-medium gap-y-10 text-white">
               <div>
                 <p className="leading-relaxed">
                   I’ve been Designing for 3+ years with skills in building

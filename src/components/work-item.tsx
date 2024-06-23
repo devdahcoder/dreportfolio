@@ -42,7 +42,7 @@ const WorkItem = (props: Props) => {
     <motion.div
       // custom={index}
       // variants={workItemVariant}
-      className="flex flex-row items-start gap-x-13 text-start justify-start gap-y-10 relative font-untitled"
+      className="flex flex-col md:flex-row items-start gap-x-13 text-start justify-start gap-y-10 relative font-untitled"
     >
       <div className="flex flex-col items-start justify-start gap-y-7 w-full">
         <div className="flex flex-row items-start flex-wrap gap-x-2 relative text-4xl sm:text-6xl font-medium bg-gradient-to-l from-zinc-900 to-gray-100 bg-clip-text text-transparent w-full">
@@ -88,7 +88,7 @@ const WorkItem = (props: Props) => {
         <ImageContainer
           imageLink={`${image}`}
           className={
-            "h-[340px] md:w-[32rem] rounded-xl blur-none md:blur-sm opacity-80"
+            "h-[340px] w-full md:w-[32rem] rounded-xl blur-none md:blur-sm opacity-80"
           }
         />
       </div>

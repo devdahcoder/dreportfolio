@@ -20,7 +20,7 @@ const WorkList = (props: Props) => {
 			initial="hidden"
 			whileInView="visible"
 			viewport={{ once: true }}
-			className="flex flex-col  gap-y-36 relative"
+			className="flex flex-col gap-y-24 md:gap-y-36 relative"
 		>
 			{workContent.map((props: IWork, index: number) => {
 				const { name, detail, href, id, image } = props;

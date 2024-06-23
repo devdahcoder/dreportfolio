@@ -53,8 +53,9 @@ const Header = (props: Props) => {
       <HeaderNavigationList
         link={headerSocialMediaLink}
         cursorType={cursorType}
-			  setCursorType={setCursorType}
-			  inView={inView}
+        setCursorType={setCursorType}
+        inView={inView}
+        containerClassName={"hidden md:flex"}
       />
       <HeaderNavigationList
         link={headerNavigationLink}

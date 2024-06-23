@@ -77,12 +77,13 @@ const Hero = ({ cursorType, setCursorType, isLoaded }: Props) => {
   );
 
   return (
-    <section ref={ref} className={`snap--section pt-24 h-screen`}>
-      <div
-        className={`flex flex-col gap-y-5 md:gap-y-2 w-11/12 md:w-[85%] mt-0 mx-auto`}
-      >
+    <section
+      ref={ref}
+      className={`snap--section pb-20 pt-16 md:pt-24 md:h-screen`}
+    >
+      <div className={`flex flex-col w-11/12 md:w-[85%] mt-0 mx-auto`}>
         <div
-          className="flex flex-col md:flex-row items-start md:items-center gap-y-2 md:gap-y-0 text-justify text-[10vw] border md:text-[8vw] font-semibold 
+          className="flex flex-col md:flex-row items-start md:items-center gap-y-2 md:gap-y-0 text-justify text-[10vw] md:text-[8vw] font-semibold 
 					font-untitled text-white after:inline-block after:w-full"
         >
           <HeroNameCharacter
@@ -94,7 +95,7 @@ const Hero = ({ cursorType, setCursorType, isLoaded }: Props) => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-y-12">
-          <div className="flex flex-row flex-wrap gap-x-2 items-center text-[3.4vw] leading-[1.1] font-medium w-full bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent">
+          <div className="flex flex-row flex-wrap gap-x-2 items-center text-[1.1rem] md:text-[3.4vw] leading-normal md:leading-[1.1] font-medium w-full bg-gradient-to-tl from-slate-300 to-gray-400 bg-clip-text text-transparent">
             {heroTextArray?.map((text: string, index: number) => (
               <div key={index}>
                 {text.toLowerCase() !== "shawnexchange" && (

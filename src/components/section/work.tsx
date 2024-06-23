@@ -9,12 +9,10 @@ const Work = (props: Props) => {
 	return (
     <motion.section id={`works`} className={`py-28`}>
       <div
-        className={`w-4/5 mt-0 mx-auto flex flex-col items-center gap-y-24 !px-3`}
+        className={`w-11/12 md:w-[85%] mt-0 mx-auto flex flex-col items-center gap-y-16 md:gap-y-24 !px-3`}
       >
         <div className="text-start flex flex-row items-start w-full ">
-          <div
-            className="font-semibold font-untitled text-4xl text-[#ADB0AD]"
-          >
+          <div className="font-semibold font-untitled text-3xl md:text-4xl text-[#ADB0AD]">
             <p>Selected Works</p>
           </div>
         </div>

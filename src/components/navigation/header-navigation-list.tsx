@@ -15,6 +15,7 @@ type Props = {
   cursorType?: string;
   inView?: boolean;
   setCursorType?: React.Dispatch<React.SetStateAction<string>>;
+  containerClassName?: string;
 };
 
 const resetAnchor = (element: HTMLElement) => {
@@ -80,7 +81,7 @@ const animateAnchorSection = (elements: HTMLElement[], index: number) => {
 };
 
 const HeaderNavigationList = (props: Props) => {
-  const { link, cursorType, setCursorType, inView } = props;
+  const { link, cursorType, setCursorType, inView, containerClassName } = props;
   const linkContainer: HTMLSpanElement[][] = [];
   const anchorBorderElements: HTMLDivElement[] = [];
 
@@ -99,7 +100,9 @@ const HeaderNavigationList = (props: Props) => {
   };
 
   return (
-    <div className="flex flex-row items-center sm:items-start md:items-center gap-x-4">
+    <div
+      className={`flex flex-row items-center sm:items-start md:items-center gap-x-4 ${containerClassName}`}
+    >
       {link &&
         link.map((props: IHeaderNavigationLink, index: number) => {
           const {

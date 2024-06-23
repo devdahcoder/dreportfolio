@@ -7,11 +7,10 @@ const Experience = (props: Props) => {
     return (
       <div className="pt-16 pb-20">
         <div
-          className="flex flex-col gap-y-16 w-11/12 sm:w-4/5 sm:my-0 sm:mx-auto px-3 font-untitled
-		"
+          className={`w-11/12 md:w-[85%] mt-0 mx-auto flex flex-col items-center gap-y-16 md:gap-y-24 !px-3`}
         >
-          <div className="text-start flex flex-row items-start">
-            <div className="font-semibold font-untitled text-4xl text-[#ADB0AD]">
+          <div className="text-start flex flex-row items-start w-full ">
+            <div className="font-semibold font-untitled text-3xl md:text-4xl text-[#ADB0AD]">
               <p>Experience</p>
             </div>
           </div>

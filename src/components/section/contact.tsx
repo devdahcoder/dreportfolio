@@ -19,7 +19,7 @@ const Contact = (props: Props) => {
 
     return (
       <div className="py-20 bg-[#151515]">
-        <div className="flex flex-col items-start justify-start gap-y-5 w-4/5 sm:my-0 sm:mx-auto px-3 transition-all duration-500 ease-in-out">
+        <div className="flex flex-col items-start justify-start gap-y-5 w-11/12 md:w-[85%] mx-auto my-0 px-3 transition-all duration-500 ease-in-out">
           <div>
             <div className="flex flex-row items-center gap-x-3 py-1 px-5 rounded-full border bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
@@ -28,7 +28,7 @@ const Contact = (props: Props) => {
             </div>
           </div>
 
-          <div className="text-5xl font-bold font-untitled bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent">
+          <div className="font-bold font-untitled bg-gradient-to-b from-slate-600 to-slate-300 bg-clip-text text-transparent">
             {/* <span>Interested in working together?</span> <br />{" "} */}
             <div className={`flex flex-row items-center flex-wrap  gap-x-3`}>
               {contactText
@@ -36,20 +36,22 @@ const Contact = (props: Props) => {
                 ?.map((arrayText: Array<string>, index: number) => (
                   <ParallaxCharacter
                     key={index}
-                    subContainerClassName={`text-5xl`}
-                    className={`!my-1 text-5xl text-white text-transparent font-untitled`}
+                    subContainerClassName={`text-5xl flex flex-row items-center flex-wrap`}
+                    className={`flex flex-row items-center flex-wrap !my-1 text-4xl md:text-5xl text-white text-transparent font-untitled`}
                     textArray={arrayText}
                   />
                 ))}
             </div>
-            <div className={`flex flex-row gap-x-3`}>
+            <div
+              className={`flex flex-row gap-x-3 flex flex-row items-center flex-wrap`}
+            >
               {contactText
                 ?.slice(4)
                 ?.map((arrayText: Array<string>, index: number) => (
                   <ParallaxCharacter
                     key={index}
-                    subContainerClassName={`text-5xl`}
-                    className={`!my-1 text-5xl text-white text-transparent font-untitled`}
+                    subContainerClassName={`text-5xl flex flex-row items-center flex-wrap`}
+                    className={`flex flex-row items-center flex-wrap !my-1 text-4xl md:text-5xl text-white text-transparent font-untitled`}
                     textArray={arrayText}
                   />
                 ))}

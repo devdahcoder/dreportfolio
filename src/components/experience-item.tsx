@@ -40,11 +40,11 @@ const ExperienceItem = (props: Props) => {
 
 	return (
     <motion.li className="list-none experience--li">
-      <div className="flex flex-col gap-y-7 leading-relaxed experience--li--div--child w-full max-w-[90%] lg:max-w-[75%]">
+      <div className="flex flex-col gap-y-7 leading-relaxed experience--li--div--child w-full max-w-full lg:max-w-[75%]">
         <ParallaxText
           index={index}
           text={text}
-          className={`text-5xl md:text-7xl leading-relaxed font-bold text-white`}
+          className={`text-4xl md:text-7xl leading-relaxed font-bold text-white`}
         />
         <ParallaxText
           index={index}
