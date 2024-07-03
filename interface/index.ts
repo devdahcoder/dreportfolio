@@ -5,6 +5,7 @@ export interface IWork {
     href?: string;
     detail?: string;
     image?: string;
+    caseStudy?: string;
 }
 
 export interface IExperience {

@@ -9,12 +9,13 @@ type Props = {
 	id?: number | string;
 	name: string;
 	href?: string;
+	caseStudy?: string;
 	detail?: string;
 	image?: string;
 };
 
 const WorkItem = (props: Props) => {
-	const { name, detail, href, id, image, index } = props;
+	const { name, detail, href, id, image, index, caseStudy } = props;
 	const projectArrayName = name?.split(" ");
 
 	const workItemVariant = {
@@ -56,7 +57,7 @@ const WorkItem = (props: Props) => {
             />
           ))}
         </div>
-        
+
         <div className="relative w-full max-w-[23rem] text-xl font-normal text-white">
           <p>{detail}</p>
         </div>
@@ -65,7 +66,7 @@ const WorkItem = (props: Props) => {
           <div>
             <a
               className="text-[#F96F21] font-medium flex flex-row items-center justify-center text-xl"
-              href="http://"
+              href={`https://${caseStudy}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -75,7 +76,7 @@ const WorkItem = (props: Props) => {
           <div>
             <a
               className="text-[#F96F21] font-medium flex flex-row items-center justify-center text-xl"
-              href="http://"
+              href={`https://${href}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -88,9 +89,7 @@ const WorkItem = (props: Props) => {
       <div className="w-full max-w-[32rem]">
         <ImageContainer
           imageLink={`${image}`}
-          className={
-            "h-[340px] w-full md:w-[32rem] rounded-xl blur-none md:blur-sm opacity-80"
-          }
+          className={"h-[340px] w-full md:w-[32rem] rounded-xl opacity-80"}
         />
       </div>
     </motion.div>

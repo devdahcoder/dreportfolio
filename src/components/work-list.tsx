@@ -23,19 +23,20 @@ const WorkList = (props: Props) => {
 			className="flex flex-col gap-y-24 md:gap-y-36 relative"
 		>
 			{workContent.map((props: IWork, index: number) => {
-				const { name, detail, href, id, image } = props;
+				const { name, detail, href, id, image, caseStudy } = props;
 
 				return (
-					<WorkItem
-						index={index}
-						key={index}
-						name={name}
-						detail={detail}
-						href={href}
-						id={id}
-						image={image}
-					/>
-				);
+          <WorkItem
+            index={index}
+            key={index}
+            name={name}
+            detail={detail}
+            href={href}
+            id={id}
+            image={image}
+            caseStudy={caseStudy}
+          />
+        );
 			})}
 		</motion.div>
 	);
