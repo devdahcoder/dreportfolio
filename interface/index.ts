@@ -6,7 +6,8 @@ export interface IWork {
     detail?: string;
     image?: string;
     caseStudy?: string;
-}
+    liveLinkText?: string;
+    caseStudyLinkText?: string;}
 
 export interface IExperience {
     id?: number | string;

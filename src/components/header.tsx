@@ -48,7 +48,7 @@ const Header = (props: Props) => {
     <SectionContainer
       refElement={ref}
       containerClassName="border-b"
-      className="header--container flex flex-row items-center justify-center sm:justify-between py-7"
+      className="header--container flex flex-row items-center justify-center sm:justify-between py-7 md:!w-[81%]"
     >
       <HeaderNavigationList
         link={headerSocialMediaLink}

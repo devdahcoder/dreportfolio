@@ -23,7 +23,7 @@ const WorkList = (props: Props) => {
 			className="flex flex-col gap-y-24 md:gap-y-36 relative"
 		>
 			{workContent.map((props: IWork, index: number) => {
-				const { name, detail, href, id, image, caseStudy } = props;
+				const { name, detail, href, id, image, caseStudy, caseStudyLinkText, liveLinkText } = props;
 
 				return (
           <WorkItem
@@ -35,6 +35,8 @@ const WorkList = (props: Props) => {
             id={id}
             image={image}
             caseStudy={caseStudy}
+			caseStudyLinkText={caseStudyLinkText}
+			liveLinkText={liveLinkText}
           />
         );
 			})}
